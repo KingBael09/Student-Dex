@@ -11,10 +11,10 @@
     /* background-color: rgb(77, 77, 77); */
     background-color: var(--bgColor);
     transition: ease 0.3s;
-    border-radius:  0 5px 5px 0px;
+    border-radius: 0 5px 5px 0px;
 
     user-select: none;
-    box-shadow: 0 0 2px  black;
+    box-shadow: 0 0 2px black;
     z-index: 99;
     overflow: hidden;
 }
