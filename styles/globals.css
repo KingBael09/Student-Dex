@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@900&display=swap");
+
+:root {
+  --bgColor: #4dd0e1;
+  --subColor: #80deea;
+  --depColor: #5dcedd;
+  --boxBorder: #ababab;
+  --whiteOffset: #fcfcfc;
+  --slightHue: #eefdff;
+  --slightWhite: #ececec;
+  --invalidInput: #ffe3e3;
+  --validInput: #c2ffeb;
+  --validated: #ddfff3;
+  /* --invalid: #eba6a6; */
+  --invalid: #ff9292;
+  --subButton: #4cca9e;
+  --state: #f75252;
+  --addBack: #ffb7b7;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  /* background: #f1f1; */
+  background: #d5ffff;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 80px;
+  background-color: #43e0e6;
+}
+
+
