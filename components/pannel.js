@@ -7,102 +7,104 @@ import {
   AiOutlineHome,
 } from "react-icons/ai";
 
-import { RiCalendarCheckLine } from "react-icons/ri";
+import { RiCalendarCheckLine, RiArrowDownSLine } from "react-icons/ri";
 import { ImBooks } from "react-icons/im";
 
 const Pannel = () => {
-  // TODO: add global state to switch between home page blur on pannel hover
-
+  // ?Done TODO: add global state to switch between home page blur on pannel hover
   // const [over, setover] = useState(false);
 
   // function OverMouse(e) {
   //   console.log(e);
   //   setover(true);
-  //   console.log(setover);
+  //   console.log(over);
   // }
 
   // function LeaveMouse(e) {
   //   console.log(e);
   //   setover(false);
-  //   console.log(setover);
+  //   console.log(over);
   // }
 
   return (
-    <nav
-      className={styles.navBody}
-      // onMouseEnter={OverMouse}
-      // onMouseLeave={LeaveMouse}
-    >
-      <div className={styles.navItem}>
-        <Link href={"/"}>
+    <>
+      <nav
+        className={styles.navBody}
+        // onMouseEnter={OverMouse}
+        // onMouseLeave={LeaveMouse}
+      >
+        <div className={styles.navItem}>
+          <Link href={"/"}>
+            <div className={styles.heading}>
+              <div>
+                <AiOutlineHome />
+              </div>
+              {/* Home */}
+              <div className={styles.linkName}>Home</div>
+            </div>
+          </Link>
+        </div>
+        <div className={styles.navItem}>
           <div className={styles.heading}>
             <div>
-              <AiOutlineHome />
+              <AiOutlineUser />
             </div>
-            {/* Home */}
-            <div className={styles.linkName}>Home</div>
+            {/* Student */}
+            <div className={styles.linkName}>Student</div>
           </div>
-        </Link>
-      </div>
-      <div className={styles.navItem}>
-        <div className={styles.heading}>
-          <div>
-            <AiOutlineUser />
-          </div>
-          {/* Student */}
-          <div className={styles.linkName}>Student</div>
-        </div>
-        <div className={styles.pList}>
-          <div className={styles.listItem}>
-            <span>Course Registration</span>
-          </div>
-          <div className={styles.listItem}>
-            <span>Student Details</span>
-          </div>
-          <div className={styles.listItem}>
-            <span>Admissions</span>
+          <div className={styles.pList}>
+            <div className={styles.listItem}>
+              <span>Course Registration</span>
+            </div>
+            <div className={styles.listItem}>
+              <span>Student Details</span>
+            </div>
+            <div className={styles.listItem}>
+              <span>Admissions</span>
+            </div>
           </div>
         </div>
-      </div>
-      <div className={styles.navItem}>
-        <div className={styles.heading}>
-          <div>
-            <ImBooks />
+        <div className={styles.navItem}>
+          <div className={styles.heading}>
+            <div>
+              <ImBooks />
+            </div>
+            <div className={styles.linkName}>Academics</div>
+            {/* Academics */}
           </div>
-          <div className={styles.linkName}>Academics</div>
-          {/* Academics */}
+          <div className={styles.pList}>
+            <div className={styles.listItem}>
+              <span>CGPA</span>
+            </div>
+            <div className={styles.listItem}>
+              <span>Notes</span>
+            </div>
+            <div className={styles.listItem}>
+              <span>Syllabus</span>
+            </div>
+          </div>
         </div>
-        <div className={styles.pList}>
-          <div className={styles.listItem}>
-            <span>CGPA</span>
-          </div>
-          <div className={styles.listItem}>
-            <span>Notes</span>
-          </div>
-          <div className={styles.listItem}>
-            <span>Syllabus</span>
+        <div className={styles.navItem}>
+          <div className={styles.heading}>
+            <div>
+              <RiCalendarCheckLine />
+            </div>
+            <div className={styles.linkName}>Attendance</div>
+            {/* Attendance */}
           </div>
         </div>
-      </div>
-      <div className={styles.navItem}>
-        <div className={styles.heading}>
-          <div>
-            <RiCalendarCheckLine />
+        <div className={styles.navItem}>
+          <div className={styles.heading}>
+            <div>
+              <AiOutlineInfoCircle />
+            </div>
+            {/* About */}
+            <div className={styles.linkName}>About</div>
           </div>
-          <div className={styles.linkName}>Attendance</div>
-          {/* Attendance */}
         </div>
-      </div>
-      <div className={styles.navItem}>
-        <div className={styles.heading}>
-          <div>
-            <AiOutlineInfoCircle />
-          </div>
-          {/* About */}
-          <div className={styles.linkName}>About</div>
-        </div>
-      </div>
-    </nav>
+      </nav>
+      <div className={styles.blur}></div>
+    </>
   );
 };
 

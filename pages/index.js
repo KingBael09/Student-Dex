@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Clock from "../components/clock";
 
-// TODO: Add blur on navbar Hover
+// ? Done TODO: Add blur on navbar Hover
 // const v = addEventListener("click", (e) => {
 //   var dem = e.target.className;
 //   console.log(dem);
@@ -28,34 +28,6 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <main className={styles.main}> */}
-      {/* <div className={styles.mains}>
-         
-          <div className={styles.headElm}>
-            <div>
-              <div>Notice</div>
-              <div></div>
-            </div>
-          </div>
-          <div className={styles.headElm}>
-            <div>
-              <Clock />
-            </div>
-          </div>
-        </div>
-
-        <div className={styles.content}>
-          <div className={styles.innerContent}>
-            <div className={styles.header}>
-              <h1>Student Info</h1>
-            </div>
-            <div className={styles.info}>info</div>
-          </div>
-        </div> */}
-
-      {/* <div><Clock/></div> */}
-      {/* </main> */}
-
       <main className={styles.mainPage}>
         <div className={styles.header}>
           <div>Dashboard</div>
@@ -64,8 +36,6 @@ export default function Home() {
             <Clock />
           </div>
         </div>
-        {/* <hr /> */}
-        {/* <div className={styles.border}><hr /></div> */}
         <div className={styles.wrap}>
           <div className={styles.major}>Info</div>
           <div className={styles.extras}>Extras</div>

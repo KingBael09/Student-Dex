@@ -10,11 +10,11 @@
     padding: 0;
     /* background-color: rgb(77, 77, 77); */
     background-color: var(--bgColor);
-    transition: ease 0.3s;
+    transition: all ease 0.3s;
     border-radius: 0 5px 5px 0px;
 
     user-select: none;
-    box-shadow: 0 0 2px black;
+    /* box-shadow: 0 0 2px black;    */
     z-index: 99;
     overflow: hidden;
 }
@@ -30,6 +30,7 @@
     cursor: pointer;
     position: relative;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .heading {
@@ -40,16 +41,17 @@
     /* width: 0; */
     gap: 1rem;
     align-items: center;
+    /* position: relative; */
 }
+
+
 
 .navItem:last-child {
     margin-top: auto;
 }
 
-
 /* //TODO: Animate linkname apperance on navHover */
 /* * Still Needs Work */
-
 
 .linkName {
     /* !: This might be Bugged due to overflow Hidden in navBody */
@@ -58,18 +60,24 @@
     transition: all 0.2s ease-in-out;
 
     font-size: 1.5rem;
+    /* position: relative; */
     /* ? Visiblity Not good for audio softwars, pageReaders */
+
+    /* Added for Down Arrow */
+    /* display: flex;
+    align-items: center; */
 }
 
 .navBody:hover {
     width: 16rem;
+    border-radius: 0 10px 10px 0px;
+    box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navBody:hover .linkName {
     /* display: block; */
     transform: translateX(0);
     visibility: visible;
-
 }
 
 /* .heading:hover {
@@ -93,8 +101,9 @@
     /* left: 100%; */
     /* background-color: rgb(77, 77, 77); */
     background-color: var(--subColor);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     border-radius: 10px;
+    /* overflow: hidden; */
     /* display: none; */
     /* border-radius: 0 5px 5px 0; */
     /* box-shadow: 0px 0 2px black; */
@@ -136,5 +145,25 @@
     border-radius: 10px;
     /* transition: all 0.3s ease; */
     /* display: block; */
+}
 
+.blur {
+    /* transition: all 5.3s ease; */
+    transition: all 0.3s ease, width 0s;
+    width: 0vw;
+    user-select: none;
+
+    /* transform-origin: left; */
+}
+
+.navBody:is(:hover)+.blur {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    width: 100vw;
+    user-select: none;
+    background: rgba(0, 0, 0, 0.1);
+    backdrop-filter: saturate(180%) blur(2px);
+    z-index: 97;
+    /* border-radius: 10px; */
 }
