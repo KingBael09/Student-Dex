@@ -79,7 +79,7 @@ const signup = () => {
                 <label htmlFor="phone">Phone</label>
                 <input
                   className={styles.input}
-                  type="phone" 
+                  type="phone"
                   required
                   placeholder="10-digit Number"
                   pattern="[0-9]{9,}"
@@ -92,27 +92,39 @@ const signup = () => {
               <div>
                 <label htmlFor="branch">Branch</label>
                 <select name="branch" className={styles.input}>
-                  <option value="" disabled selected hidden>
+                  <option value="NA" disabled selected hidden>
                     ------------------------------Select------------------------------
                   </option>
-                  <option value="">Civil</option>
-                  <option value="">Mechanical</option>
-                  <option value="">Electrical</option>
-                  <option value="electronics">Electronics</option>
+                  <option value="Civil">Civil</option>
+                  <option value="Mechanical">Mechanical</option>
+                  <option value="Electrical">Electrical</option>
+                  <option value="Electronics">Electronics</option>
                   <option value="CSE">Computer Science</option>
-                  <option value="">Information Technology</option>
+                  <option value="IT">Information Technology</option>
                 </select>
               </div>
-              
+
               <div>
                 <label htmlFor="password">Create Password</label>
-                <input type="password" required minLength={8} title="Password Must be 8 Characters Long" className={styles.input}
-               placeholder="******************" />
+                <input
+                  type="password"
+                  required
+                  minLength={8}
+                  title="Password Must be 8 Characters Long"
+                  className={styles.input}
+                  placeholder="******************"
+                />
               </div>
               <div>
                 <label htmlFor="rePassword">RE-Password</label>
-                <input type="password" required minLength={8} title="Password Must be 8 Characters Long" className={styles.input} 
-                placeholder="******************"/>
+                <input
+                  type="password"
+                  required
+                  minLength={8}
+                  title="Password Must be 8 Characters Long"
+                  className={styles.input}
+                  placeholder="******************"
+                />
               </div>
             </div>
             <div className={styles.submit}>
