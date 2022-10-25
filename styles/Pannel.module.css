@@ -47,14 +47,13 @@
   /* position: relative; */
 }
 
-
-
 .navItem:last-child {
   margin-top: auto;
 }
 
 /* //TODO: Animate linkname apperance on navHover */
 /* * Still Needs Work */
+/* ! Heavy CSS Loading Causes Sluttering on First load */
 
 .linkName {
   /* !: This might be Bugged due to overflow Hidden in navBody */

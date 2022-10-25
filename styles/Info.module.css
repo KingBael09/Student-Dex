@@ -27,17 +27,15 @@
   margin: 1rem;
 }
 
-
-
-.img{
-    /* flex: 0.2; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
+.img {
+  /* flex: 0.2; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.icon{
-    font-size: 150px;
+.icon {
+  font-size: 150px;
 }

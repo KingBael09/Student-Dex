@@ -6,8 +6,6 @@ import Info from "../components/Info";
 // ? Done TODO: Add blur on navbar Hover
 
 export default function Home(props) {
-
-
   return (
     <div className={styles.container}>
       <Head>

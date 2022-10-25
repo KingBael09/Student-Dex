@@ -17,5 +17,10 @@
   "Religion": "Hindu",
   "PhysicalHandicap": false,
   "Gender": "Male",
-  "Mail": "jayesh0071@outlook.com"
+  "Mail": "jayesh0071@outlook.com",
+  "AdmissionData": {
+    "Day": 2,
+    "Month": 2,
+    "Year": 2020
+  }
 }
