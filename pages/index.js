@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Clock from "../components/clock";
+import Info from "../components/Info";
 
 // ? Done TODO: Add blur on navbar Hover
 // const v = addEventListener("click", (e) => {
@@ -14,7 +15,7 @@ import Clock from "../components/clock";
 //   console.log(dem);
 // });
 
-export default function Home() {
+export default function Home(props) {
   //   if (over == "true") {
   //   const val = "hello";
   //   console.log("set over is true");
@@ -37,12 +38,23 @@ export default function Home() {
           </div>
         </div>
         <div className={styles.wrap}>
-          <div className={styles.major}>Info</div>
-          <div className={styles.extras}>Extras</div>
+          <div className={[styles.major, styles.dash].join(" ")}>
+            <Info data={props.data} />
+          </div>
+          <div className={[styles.extras, styles.dash].join(" ")}>Extras</div>
         </div>
       </main>
 
       {/* <footer className={styles.footer}></footer> */}
     </div>
   );
+}
+
+export async function getServerSideProps(context) {
+  let ImportedData = await fetch("http://localhost:3000/api/userInfo");
+  let data = await ImportedData.json();
+  // console.log(data);
+  return {
+    props: { data },
+  };
 }

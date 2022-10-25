@@ -37,12 +37,17 @@
   font-size: 2rem;
   height: 5rem;
   display: flex;
-  margin-left: 2rem;
+  /* margin-left: 2rem; */
+  /* padding-inline: 2rem; */
+  padding-left: 2rem;
+  /* padding-right: 2rem; */
   /* width: 0; */
   gap: 1rem;
   align-items: center;
   /* position: relative; */
 }
+
+
 
 .navItem:last-child {
   margin-top: auto;
@@ -62,8 +67,8 @@
   /* ? Visiblity Not good for audio softwars, pageReaders */
 
   /* Added for Down Arrow */
-  /* display: flex;
-    align-items: center; */
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .navBody:hover {

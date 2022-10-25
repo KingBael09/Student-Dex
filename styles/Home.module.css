@@ -55,10 +55,10 @@
   gap: 2rem;
 }
 
-.wrap div {
-  display: flex;
+.dash {
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   border-radius: 40px;
   box-shadow: 0 0 2px black;
 }

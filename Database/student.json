@@ -1,0 +1,21 @@
+{
+  "FName": "Jayesh",
+  "LName": "Singh",
+  "RollNo": "BE20F05F063",
+  "Branch": "Computer Science Engineerig",
+  "Semester": "V",
+  "DOB": {
+    "Day": 9,
+    "Month": 11,
+    "Year": 2002
+  },
+  "Nationality": "Indian",
+  "Phone": 7972285234,
+  "Address": "NaN",
+  "Catagory": "OPEN",
+  "City": "Nashik",
+  "Religion": "Hindu",
+  "PhysicalHandicap": false,
+  "Gender": "Male",
+  "Mail": "jayesh0071@outlook.com"
+}

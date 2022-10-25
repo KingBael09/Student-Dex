@@ -1,0 +1,43 @@
+.container {
+  padding: 1rem;
+  display: flex;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.infor {
+  display: flex;
+  gap: 1rem;
+  font-size: 20px;
+  /* justify-content: flex-start;
+  align-items: flex-start; */
+  /* padding: 1rem; */
+  margin-top: 1rem;
+  /* width: 50%; */
+  /* flex-grow: 1; */
+}
+
+.head {
+  flex-grow: 1;
+}
+
+.wrap {
+  flex: 0.6;
+  margin: 1rem;
+}
+
+
+
+.img{
+    /* flex: 0.2; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icon{
+    font-size: 150px;
+}

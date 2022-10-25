@@ -51,6 +51,7 @@ const Pannel = () => {
             </div>
             {/* Student */}
             <div className={styles.linkName}>Student</div>
+            {/* <div className={styles.arrow}><RiArrowDownSLine/></div> */}
           </div>
           <div className={styles.pList}>
             <div className={styles.listItem}>
@@ -70,6 +71,7 @@ const Pannel = () => {
               <ImBooks />
             </div>
             <div className={styles.linkName}>Academics</div>
+            {/* <div className={styles.arrow}><RiArrowDownSLine/></div> */}
             {/* Academics */}
           </div>
           <div className={styles.pList}>
