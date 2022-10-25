@@ -4,22 +4,9 @@ import Clock from "../components/clock";
 import Info from "../components/Info";
 
 // ? Done TODO: Add blur on navbar Hover
-// const v = addEventListener("click", (e) => {
-//   var dem = e.target.className;
-//   console.log(dem);
-// });
-
-// addEventListener
-// const v = addEventListener("click", (e) => {
-//   var dem = e.target.className;
-//   console.log(dem);
-// });
 
 export default function Home(props) {
-  //   if (over == "true") {
-  //   const val = "hello";
-  //   console.log("set over is true");
-  // }
+
 
   return (
     <div className={styles.container}>

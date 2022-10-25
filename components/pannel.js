@@ -12,19 +12,6 @@ import { ImBooks } from "react-icons/im";
 
 const Pannel = () => {
   // ?Done TODO: add global state to switch between home page blur on pannel hover
-  // const [over, setover] = useState(false);
-
-  // function OverMouse(e) {
-  //   console.log(e);
-  //   setover(true);
-  //   console.log(over);
-  // }
-
-  // function LeaveMouse(e) {
-  //   console.log(e);
-  //   setover(false);
-  //   console.log(over);
-  // }
 
   return (
     <>
