@@ -5,7 +5,7 @@ import Head from "next/head";
 const Signup = () => {
   const [FName, setFName] = useState("");
   const [LName, setLName] = useState("");
-  const [Gender, setGender] = useState({ Male: null, Female: null });
+  const [Gender, setGender] = useState("");
   const [DOB, setDOB] = useState("");
   const [AdmissionData, setAdmissionData] = useState("");
   const [Mail, setMail] = useState("");
@@ -16,26 +16,56 @@ const Signup = () => {
 
   const [SignData, setSignData] = useState("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (Pass != RePass) {
       alert("Password Don't Match");
       setPass("");
       setRePass("");
     } else {
+      // const tempData = {
+      //   Fname: FName,
+      //   LName: LName,
+      //   Gender: Gender,
+      //   DOB: DOB,
+      //   AdmissionData: AdmissionData,
+      //   Mail: Mail,
+      //   Phone: Phone,
+      //   Branch: Branch,
+      //   Pass: Pass
+      // };
       const tempData = {
-        Fname: FName,
-        LName: LName,
-        Gender: Gender,
-        DOB: DOB,
-        AdmissionData: AdmissionData,
-        Mail: Mail,
-        Phone: Phone,
-        Branch: Branch,
-        Pass: Pass,
+        FName,
+        LName,
+        Gender,
+        DOB,
+        AdmissionData,
+        Mail,
+        Phone,
+        Branch,
+        Pass,
       };
       setSignData(tempData);
+      // console.log(tempData);
+
+      sendData(tempData);
     }
+
+    // fetch("http://localhost:3000/api/userSave", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(SignData),
+    // })
+    //   .then((res) => res.text())
+    //   .then((demo) => {
+    //     console.log("Success: ", demo.toString());
+    //     alert("Submitted SuccessFully");
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error: ", error);
+    //   });
   };
 
   const genChange = (e) => {
@@ -45,6 +75,24 @@ const Signup = () => {
     } else {
       setGender("Female");
     }
+  };
+
+  const sendData = (e) => {
+    fetch("http://localhost:3000/api/userSave", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(e),
+    })
+      .then((res) => res.text())
+      .then((demo) => {
+        console.log("Success: ", demo.toString());
+        alert("Submitted SuccessFully");
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
   };
 
   return (
@@ -66,6 +114,7 @@ const Signup = () => {
                     placeholder="First Name"
                     value={FName}
                     onChange={(event) => setFName(event.target.value)}
+                    // onChange={handleOnchange}
                     required
                   />
                 </div>
@@ -76,6 +125,7 @@ const Signup = () => {
                     placeholder="Last Name"
                     value={LName}
                     onChange={(event) => setLName(event.target.value)}
+                    // onChange={handleOnchange}
                     required
                   />
                 </div>
