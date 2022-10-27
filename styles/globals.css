@@ -11,11 +11,13 @@
   --invalidInput: #ffe3e3;
   --validInput: #c2ffeb;
   --validated: #ddfff3;
-  /* --invalid: #eba6a6; */
   --invalid: #ff9292;
   --subButton: #4cca9e;
   --state: #f75252;
   --addBack: #ffb7b7;
+  --unfocusInvalid: #ffd4d4;
+
+  --signUpWidth: 55%;
 }
 
 html,
@@ -39,5 +41,3 @@ body {
   border-radius: 80px;
   background-color: #43e0e6;
 }
-
-

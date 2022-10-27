@@ -1,167 +1,309 @@
-.container {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "Roboto", sans-serif;
-    /* background-color: var(--invalid); */
-    /* background-color: var(--subColor); */
-    /* background-color: var(--addBack); */
+/* .container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--subColor);
-    /* background-color: var(--whiteOffset); */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    /* padding: 4rem; */
-    padding: 0 4rem;
-    border-radius: 40px;
-    height: 80vh;
-    user-select: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--subColor);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  padding: 0 4rem;
+  border-radius: 40px;
+  height: 80vh;
+  user-select: none;
 }
 
 .innerform {
-    margin-top: clamp(0.5rem, 2vh, 2rem);
+  margin-top: clamp(0.5rem, 2vh, 2rem);
 }
 
 .heading {
-    text-align: center;
-    margin-top: 4rem;
-    font-size: 30px;
-    
-
-    /* color: var(--slightWhite); */
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 30px;
 }
 
 .formBody {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: flex-start; */
-    align-items: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  gap: 2rem;
 }
 
 .actualForm {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* align-items: center; */
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.actualForm>div {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    gap: 20px;
+.actualForm > div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
-.actualForm>div>input {
-    flex-grow: 1;
-    border-radius: 30px;
-    box-shadow: 0 0 2px black;
-    padding: 10px;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    /* text-align: center;  */
+.actualForm > div > input {
+  flex-grow: 1;
+  border-radius: 30px;
+  box-shadow: 0 0 2px black;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
-.actualForm>div>select {
-    flex-grow: 1;
-    outline: none;
-    border: none;
-    padding: 10px;
-    /* background-color: Chucknorris; */
-    box-shadow: 0 0 2px black;
-    border-radius: 40px;
-    text-align: center;
-    /* appearance: none; */
+.actualForm > div > select {
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  padding: 10px;
+  box-shadow: 0 0 2px black;
+  border-radius: 40px;
+  text-align: center;
 }
 
-.actualForm>div>select option {
-    text-align: center;
+.actualForm > div > select option {
+  text-align: center;
 }
 
 .dob {
-    text-align: center;
+  text-align: center;
 }
 
-.name>div>input {
-    flex-grow: 1;
-    border-radius: 30px;
-    box-shadow: 0 0 2px black;
-    padding: 10px;
-    text-decoration: none;
-    border: none;
-    outline: none;
+.name > div > input {
+  flex-grow: 1;
+  border-radius: 30px;
+  box-shadow: 0 0 2px black;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  outline: none;
 }
 
 .submit {
-    margin-top: 1rem;
+  margin-top: 1rem;
 }
 
-.submit>button {
-    border: none;
-    outline: none;
-    background-color: var(--subButton);
-    /* background-color: yellow; */
-    padding: 1rem 3rem;
-    border-radius: 30px;
-    font-size: 20px;
-    font-weight: bolder;
-    box-shadow: 2px 2px 2px black;
-    transition: all 0.3s;
-    cursor: pointer;
-
+.submit > button {
+  border: none;
+  outline: none;
+  background-color: var(--subButton);
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: bolder;
+  box-shadow: 2px 2px 2px black;
+  transition: all 0.3s;
+  cursor: pointer;
 }
 
-.submit>button:active {
-    box-shadow: none;
+.submit > button:active {
+  box-shadow: none;
 }
 
-.submit>button:hover {
-    background-color: var(--state);
-    /* background-color: var(--subButton); */
+.submit > button:hover {
+  background-color: var(--state);
 }
-
-/* .flexBox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
 
 .intFlex {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
-
-
-
 .input {
-    background-color: var(--slightHue);
-    /* background-color: yellow; */
+  background-color: var(--slightHue);
 }
 
 .input:required:valid {
-    background-color: var(--validInput);
+  background-color: var(--validInput);
 }
 
 .input:required:focus:valid {
-    background-color: var(--validated);
+  background-color: var(--validated);
 }
 
 .input:not(:placeholder-shown):invalid {
-    background-color: var(--invalid);
-    /* box-shadow: 1px 1px 0px red; */
+  background-color: var(--invalid);
 }
 
 .input:focus:invalid {
-    background-color: var(--invalidInput);
+  background-color: var(--invalidInput);
+} */
+
+/* !Experemental Stuff */
+
+.container {
+  height: 100vh;
+  width: 100vw;
+  /* background-image: linear-gradient(140deg, #ffffff 0%, var(--subColor) 50%, var(--bgColor) 75%); */
+  background-image: linear-gradient(
+    140deg,
+    var(--slightHue) 5%,
+    var(--subColor) 50%,
+    var(--bgColor) 85%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  /* padding: 20vh 25vw; */
+  height: 75vh;
+  width: 75vw;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 10px;
+}
+
+.heading {
+  font-size: 3rem;
+  margin-left: 2rem;
+  font-family: "Jetbrains Mono";
+  font-weight: 900;
+  color: #190075;
+}
+
+.innerform {
+  /* visibility: hidden; */
+  padding: 1rem;
+  margin-top: 2rem;
+  font-family: "Jetbrains Mono";
+  font-weight: 900;
+  margin-left: 3rem;
+  overflow: hidden;
+}
+
+.firstForm {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  font-size: 1.2rem;
+  /* width: 60%; */
+  width: var(--signUpWidth);
+}
+
+.firstForm > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.name > div {
+  flex-grow: 1;
+  display: flex;
+}
+
+.flexBox {
+  display: flex;
+  /* justify-content: space-around; */
+}
+
+.flexWrap {
+  flex-grow: 1;
+  /* padding-right: 10rem; */
+  display: flex;
+  gap: 5vw;
+  /* justify-content: space-evenly; */
+  margin-left: 3vw;
+}
+
+.input {
+  border-radius: 10px;
+  padding: 10px;
+  text-decoration: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  outline: none;
+  flex-grow: 1;
+}
+
+.secondForm {
+  display: flex;
+  flex-direction: column;
+  gap: 3vh;
+  font-size: 1.2rem;
+  /* width: 60%; */
+  width: var(--signUpWidth);
+}
+
+.secondForm > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.input {
+  background-color: var(--slightHue);
+}
+
+.input:required:valid {
+  background-color: var(--validInput);
+}
+
+.input:required:focus:valid {
+  background-color: var(--validated);
+}
+
+.input:not(:placeholder-shown):invalid {
+  background-color: var(--unfocusInvalid);
+}
+
+.input:focus:invalid {
+  background-color: var(--invalidInput);
+}
+
+.firstForm {
+  /* display: none; */
+}
+.secondForm {
+  display: none;
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.submit {
+  display: flex;
+  justify-content: center;
+  width: var(--signUpWidth);
+  margin-top: 1rem;
+}
+
+.submit > button {
+  border: none;
+  outline: none;
+  background-color: var(--subButton);
+  /* background-color: inherit; */
+  font-family: 'Jetbrains Mono';
+  padding: 1rem 3rem;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.473);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.submit > button:active {
+  box-shadow: none;
+}
+
+.submit > button:hover {
+  background-color: var(--state);
+}
+
+.mainSubmit{
+  display: none;
 }
