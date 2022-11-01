@@ -191,7 +191,7 @@
   font-size: 1.2rem;
   /* width: 60%; */
   width: var(--signUpWidth);
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .firstForm > div {
@@ -236,7 +236,7 @@
   /* width: 60%; */
   width: var(--signUpWidth);
 
-  transition: all 0.3s ease;
+  /* transition: all 0.3s ease; */
 }
 
 .secondForm > div {
@@ -263,13 +263,6 @@
 
 .input:focus:invalid {
   background-color: var(--invalidInput);
-}
-
-.firstForm {
-  /* display: none; */
-}
-.secondForm {
-  /* display: none; */
 }
 
 .formBody {
@@ -308,6 +301,8 @@
   background-color: var(--state);
 }
 
-.mainSubmit {
-  /* display: none; */
+.firstForm,
+.secondForm,
+.submit {
+  transition: all 0.3s ease-in-out;
 }
