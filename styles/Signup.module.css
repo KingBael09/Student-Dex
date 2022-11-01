@@ -156,6 +156,7 @@
 }
 
 .wrapper {
+  /* display: flex; */
   /* padding: 20vh 25vw; */
   height: 75vh;
   width: 75vw;
@@ -190,6 +191,7 @@
   font-size: 1.2rem;
   /* width: 60%; */
   width: var(--signUpWidth);
+  transition: all 0.3s ease;
 }
 
 .firstForm > div {
@@ -233,6 +235,8 @@
   font-size: 1.2rem;
   /* width: 60%; */
   width: var(--signUpWidth);
+
+  transition: all 0.3s ease;
 }
 
 .secondForm > div {
@@ -265,7 +269,7 @@
   /* display: none; */
 }
 .secondForm {
-  display: none;
+  /* display: none; */
 }
 
 .formBody {
@@ -286,7 +290,7 @@
   outline: none;
   background-color: var(--subButton);
   /* background-color: inherit; */
-  font-family: 'Jetbrains Mono';
+  font-family: "Jetbrains Mono";
   padding: 1rem 3rem;
   border-radius: 30px;
   font-size: 20px;
@@ -304,6 +308,6 @@
   background-color: var(--state);
 }
 
-.mainSubmit{
-  display: none;
+.mainSubmit {
+  /* display: none; */
 }
