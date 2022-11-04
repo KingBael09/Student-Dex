@@ -11,7 +11,6 @@ const Login = (props) => {
   const [id, setid] = useState("");
   const [pass, setpass] = useState("");
   const [dataInput, setDataInput] = useState();
-
   const [some, setsome] = useUserInfo();
 
   const handleChange = (e) => {
@@ -110,14 +109,5 @@ const Login = (props) => {
     </div>
   );
 };
-
-// export async function global(context) {
-//   let state = dataInput;
-
-//   console.log(state);
-//   return {
-//     props: { state },
-//   };
-// }
 
 export default Login;

@@ -4,24 +4,32 @@ import { useRouter } from "next/router";
 import { UserData } from "../context/userState";
 
 function MyApp({ Component, pageProps }) {
-  const router = useRouter();
-  if (
-    router.pathname == "/404" ||
-    router.pathname == "/login" ||
-    router.pathname == "/signup"
-  ) {
-    return (
-      <>
-        <UserData>
-          <Component {...pageProps} />
-        </UserData>
-      </>
-    );
-  }
+  // const router = useRouter();
+  // if (
+  //   router.pathname == "/404" ||
+  //   router.pathname == "/login" ||
+  //   router.pathname == "/signup"
+  // ) {
+  //   return (
+  //     <>
+  //       <UserData>
+  //         <Component {...pageProps} />
+  //       </UserData>
+  //     </>
+  //   );
+  // }
+  // return (
+  //   <>
+  //     <UserData>
+  //       {/* <Pannel /> */}
+  //       <Component {...pageProps} />
+  //     </UserData>
+  //   </>
+  // );
+
   return (
     <>
       <UserData>
-        <Pannel />
         <Component {...pageProps} />
       </UserData>
     </>
