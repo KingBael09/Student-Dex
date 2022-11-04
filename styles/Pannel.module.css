@@ -15,7 +15,7 @@
 
   user-select: none;
   /* box-shadow: 0 0 2px black;    */
-  z-index: 99;
+  z-index: 97;
   overflow: hidden;
 }
 
@@ -165,7 +165,7 @@
   width: 100vw;
   user-select: none;
   background: rgba(0, 0, 0, 0.1);
-  backdrop-filter: saturate(180%) blur(2px);
-  z-index: 97;
+  backdrop-filter: blur(2px);
+  z-index: 95;
   /* border-radius: 10px; */
 }

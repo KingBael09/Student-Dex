@@ -70,3 +70,7 @@
 .extras {
   flex-grow: 0.2;
 }
+
+.center {
+  display: flex;
+}

@@ -2,31 +2,42 @@ import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Head from "next/head";
-// @refresh reset
+
+import { useUserInfo } from "../context/userState";
+import { useRouter } from "next/router";
+
 const Login = (props) => {
+  const router = useRouter();
   const [id, setid] = useState("");
   const [pass, setpass] = useState("");
   const [dataInput, setDataInput] = useState();
 
+  const [some, setsome] = useUserInfo();
+
   const handleChange = (e) => {
     if (e.target.name === "id") {
       setid(e.target.value);
-      console.log(id);
     } else {
       setpass(e.target.value);
-      console.log(pass);
     }
   };
 
-  const handleSubmit = (e) => {
-    // console.log(e);
-    e.preventDefault();
+  // !Experemental Code BELOW
 
-    const info = { uid: id, passwd: pass };
-    setDataInput(info);
+  // const handleLogin = (e) => {};
+
+  const handleSubmit = (e) => {
+    const info = { id: id, Pass: pass };
+    callbackSet(info);
+    e.preventDefault();
   };
 
-  // console.log(dataInput);
+  const callbackSet = (e) => {
+    setsome(e);
+    if (typeof window != "undefined") {
+      sessionStorage.setItem("id", e.uid);
+    }
+  };
 
   return (
     <div className={styles.container}>
@@ -69,9 +80,9 @@ const Login = (props) => {
                     />
                   </div>
                   <div className={styles.submit}>
-                    <Link href="/">
-                      <button type="submit">Login</button>
-                    </Link>
+                    {/* <Link href="/"> */}
+                    <button>Login</button>
+                    {/* </Link> */}
                   </div>
                 </form>
               </div>
@@ -88,7 +99,7 @@ const Login = (props) => {
                 {/* <span className={styles.obj}>?</span> */}
               </div>
               <div className={styles.signUp}>
-                <Link  href="/signup">
+                <Link href="/signup">
                   <button>Sign Up</button>
                 </Link>
               </div>

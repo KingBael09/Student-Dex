@@ -18,6 +18,21 @@ const Signup = () => {
   const [SignData, setSignData] = useState("");
   const [stage, setStage] = useState(1);
 
+  const clearState = () => {
+    setFName("");
+    setLName("");
+    setGender("");
+    setDOB("");
+    setAdmissionData("");
+    setMail("");
+    setPhone("");
+    setBranch("");
+    setRollNo("");
+    setPass("");
+    setRePass("");
+    setStage(1);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (Pass != RePass) {
@@ -67,18 +82,7 @@ const Signup = () => {
         } else {
           alert("Submitted SuccessFully");
         }
-        setFName("");
-        setLName("");
-        setGender("");
-        setDOB("");
-        setAdmissionData("");
-        setMail("");
-        setPhone("");
-        setBranch("");
-        setRollNo("");
-        setPass("");
-        setRePass("");
-        setStage(1);
+        clearState();
       })
       .catch((error) => {
         console.error("Error: ", error);
@@ -99,9 +103,7 @@ const Signup = () => {
                 type="text"
                 placeholder="First Name"
                 value={FName}
-                // autocomplete="off"
                 onChange={(event) => setFName(event.target.value)}
-                // onChange={handleOnchange}
                 required
               />
             </div>
@@ -110,10 +112,8 @@ const Signup = () => {
                 className={styles.input}
                 type="text"
                 placeholder="Last Name"
-                // autocomplete="off"
                 value={LName}
                 onChange={(event) => setLName(event.target.value)}
-                // onChange={handleOnchange}
                 required
               />
             </div>
@@ -127,7 +127,6 @@ const Signup = () => {
                   type="radio"
                   value={"male"}
                   onChange={genChange}
-                  // value={Gender.Male}
                   name="gender"
                   required
                 />
@@ -139,7 +138,6 @@ const Signup = () => {
                   type="radio"
                   value={"female"}
                   onChange={genChange}
-                  // value={Gender.Female}
                   name="gender"
                   required
                 />
@@ -298,7 +296,6 @@ const Signup = () => {
   };
 
   const handleNext = () => {
-    // console.log("first");
     const condition =
       FName != "" &&
       LName != "" &&
@@ -324,7 +321,6 @@ const Signup = () => {
         };
 
         for (const key in arr) {
-          // console.log(`${key} in ${arr[key]}`);
           if (arr[key] === "") {
             alert(`${key} missing`);
             return;

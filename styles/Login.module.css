@@ -5,7 +5,8 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    font-family: "Roboto", sans-serif;
+    /* font-family: "Roboto", sans-serif; */
+    font-family: var(--codeFont);
 }
 
 .mainWrap {
@@ -45,6 +46,8 @@
 }
 .secondaryForm{
     justify-content: center !important;
+    /* font-family: "Roboto", sans-serif; */
+
 }
 
 .input {
@@ -176,6 +179,7 @@
     color: var(--whiteOffset);
     font-size: 25px;
     position: relative;
+    font-weight: 900;
     /* vertical-align: middle; */
     /* text-align: center; */
 }

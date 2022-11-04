@@ -1,11 +1,10 @@
 import "../styles/globals.css";
-import Navbar from "../components/navbar";
 import Pannel from "../components/pannel";
 import { useRouter } from "next/router";
+import { UserData } from "../context/userState";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
-  // console.log(router);
   if (
     router.pathname == "/404" ||
     router.pathname == "/login" ||
@@ -13,15 +12,18 @@ function MyApp({ Component, pageProps }) {
   ) {
     return (
       <>
-        <Component {...pageProps} />
+        <UserData>
+          <Component {...pageProps} />
+        </UserData>
       </>
     );
   }
   return (
     <>
-      {/* <Navbar /> */}
-      <Pannel />
-      <Component {...pageProps} />
+      <UserData>
+        <Pannel />
+        <Component {...pageProps} />
+      </UserData>
     </>
   );
 }
