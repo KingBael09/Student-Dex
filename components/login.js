@@ -32,11 +32,37 @@ const Login = (props) => {
   };
 
   const callbackSet = (e) => {
-    setsome(e);
+    // setsome(e);
     if (typeof window != "undefined") {
       sessionStorage.setItem("id", e.uid);
     }
+    callSessionValidator(e);
   };
+
+  const callSessionValidator = async (e) => {
+    // console.log(e);
+    let sentData = await fetch("http://localhost:3000/api/userSession", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(e),
+    });
+
+    let resData = await sentData.json();
+    // console.log(resData);
+
+    if (resData.status == "Invalid") {
+      alert("Invalid Password");
+    } else if (resData.status == "Unavailable") {
+      alert("User Not Found");
+    } else {
+      // console.log("Welcome");
+      setsome(e);
+    }
+  };
+
+  // ! Experemental Code ABOVE
 
   return (
     <div className={styles.container}>

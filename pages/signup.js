@@ -66,27 +66,25 @@ const Signup = () => {
     }
   };
 
-  const sendData = (e) => {
-    fetch("http://localhost:3000/api/userSave", {
+  const sendData = async (e) => {
+    // ?Try Catch Not Enabled Here
+
+    let sentData = await fetch("http://localhost:3000/api/userSave", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(e),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        // console.log("Success: ", data);
-        if (data.status === "Exists") {
-          alert("User Already Exists");
-        } else {
-          alert("Submitted SuccessFully");
-        }
-        clearState();
-      })
-      .catch((error) => {
-        console.error("Error: ", error);
-      });
+    });
+
+    let resData = await sentData.json();
+    if (resData.status === "Exists") {
+      alert("User Already Exists");
+    } else {
+      alert("Submitted SuccessFully");
+    }
+    clearState();
+    console.log(resData);
   };
 
   //! Expremental Features Below Here

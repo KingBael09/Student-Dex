@@ -1,26 +1,26 @@
 {
-  "FName": "Jayesh",
-  "LName": "Singh",
-  "RollNo": "BE20F05F063",
-  "Branch": "Computer Science Engineerig",
-  "Semester": "V",
+  "FName": "Default String",
+  "LName": "Default String",
+  "RollNo": "Default String",
+  "Branch": "Default String",
+  "Semester": "Default String",
   "DOB": {
-    "Day": 9,
-    "Month": 11,
-    "Year": 2002
+    "Day": "Default Number",
+    "Month": "Default Number",
+    "Year": "Default Number"
   },
-  "Nationality": "Indian",
-  "Phone": 7972285234,
-  "Address": "NaN",
-  "Catagory": "OPEN",
-  "City": "Nashik",
-  "Religion": "Hindu",
-  "PhysicalHandicap": false,
-  "Gender": "Male",
+  "Nationality": "Default String",
+  "Phone": "Defalut Number",
+  "Address": "Default String",
+  "Catagory": "Default String",
+  "City": "Default String",
+  "Religion": "Default String",
+  "PhysicalHandicap": "Defalut Boolean",
+  "Gender": "Default String",
   "Mail": "jayesh0071@outlook.com",
   "AdmissionData": {
-    "Day": 2,
-    "Month": 2,
-    "Year": 2020
+    "Day": "Default Number",
+    "Month": "Default Number",
+    "Year": "Default Number"
   }
 }

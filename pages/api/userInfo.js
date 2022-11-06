@@ -1,14 +1,31 @@
 import * as fs from "fs";
+import { useUserInfo } from "../../Context/userState";
 
 // Reads File Database/student.js and redirects its content
 
 export default async function handler(req, res) {
-  let data = await fs.promises.readFile("Database/student.json");
+  if (req.method === "POST") {
+    const availFile = `Database/Users/${req.body.id}.json`;
+    if (fs.existsSync(availFile)) {
+      let data = await fs.promises.readFile(
+        `Database/Users/${req.body.id}.json`
+      );
+      // console.log(req.body.id);
 
-//   let finalData = [];
-//   finalData.push(JSON.parse(data));
-    let finalData = JSON.parse(data)
-  
-  res.status(200).json(finalData);
+      let finalData = JSON.parse(data);
 
+      if (finalData.Pass != req.body.Pass) {
+        res.status(404).json({ status: "Invalid" });
+      } else {
+        res.status(200).json(finalData);
+      }
+    } else {
+      res.status(200).json({ status: "Unavailable" });
+    }
+  } else {
+    let data = await fs.promises.readFile("Database/student.json");
+
+    let finalData = JSON.parse(data);
+    res.status(200).json(finalData);
+  }
 }

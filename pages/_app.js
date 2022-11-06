@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import Pannel from "../components/pannel";
 import { useRouter } from "next/router";
 import { UserData } from "../context/userState";
+import { DataDesign } from "../Context/dataHolder";
 
 function MyApp({ Component, pageProps }) {
   // const router = useRouter();
@@ -30,7 +31,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <UserData>
-        <Component {...pageProps} />
+        <DataDesign>
+          <Component {...pageProps} />
+        </DataDesign>
       </UserData>
     </>
   );

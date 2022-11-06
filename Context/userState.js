@@ -24,7 +24,3 @@ export function UserData({ children }) {
 export function useUserInfo() {
   return useContext(Context);
 }
-
-if (typeof window != "undefined") {
-  // sessionStorage.setItem("id", "Lmao");
-}
