@@ -1,14 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Info.module.css";
 import { AiOutlineUser } from "react-icons/ai";
 import { useUserData } from "../Context/dataHolder";
+import { useUserInfo } from "../context/userState";
 
 const Info = (props) => {
   // const [info, setInfo] = useState(props.data);
   // const info = props.data;
-  const [info, setInfo] = useUserData()
+  const [info, setinfo] = useState();
+  const [session, setsession] = useUserInfo();
 
-
+  const dataService = async () => {
+    let ImportedData = await fetch("http://localhost:3000/api/userInfo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(session),
+    });
+    let data = await ImportedData.json();
+    let finaldata = data;
+    // setDAMN(finalData);
+    console.log("This Statement go BRrrrrr......");
+    // console.log(finaldata);
+    setinfo(finaldata);
+    console.log(finaldata);
+  };
+  // useEffect
+  useEffect(() => {
+    dataService()
+  
+  }, [])
+  
   if (info === undefined) {
     return <div>LMAO</div>;
   } else {

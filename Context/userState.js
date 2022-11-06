@@ -13,6 +13,8 @@ export function UserData({ children }) {
   //   setsession(sessionId);
   // }
   const [session, setsession] = useState("waiting");
+  // console.log(session);
+  // console.log("From userState JS")
 
   return (
     <Context.Provider value={[session, setsession]}>
