@@ -59,12 +59,13 @@
   /* display: flex;
   justify-content: center;
   align-items: center; */
-  border-radius: 40px;
-  box-shadow: 0 0 2px black;
+  /* border-radius: 40px; */
+  /* box-shadow: 0 0 2px black; */
 }
 
 .major {
   flex-grow: 0.79;
+  border-right:  2px solid black;
 }
 
 .extras {

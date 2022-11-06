@@ -7,12 +7,13 @@ import Pannel from "../components/pannel";
 import { useUserInfo } from "../context/userState";
 import { useRouter } from "next/router";
 import Login from "../components/login";
+import Extras from "../components/extras";
 // import { useEffect, useState } from "react";
 
 // ? Done TODO: Add blur on navbar Hover
 
 export default function Home(props) {
-  const router = useRouter();
+  // const router = useRouter();
   const [session, setsession] = useUserInfo();
 
   // ? Fucked Up Logic
@@ -44,7 +45,7 @@ export default function Home(props) {
                 <Info />
               </div>
               <div className={[styles.extras, styles.dash].join(" ")}>
-                Extras
+                <Extras />
               </div>
             </div>
           </main>
@@ -55,21 +56,3 @@ export default function Home(props) {
     );
   }
 }
-
-// export async function getServerSideProps(e) {
-//   // console.log(context + " Lmao ");
-//   console.log(e);
-//   let ImportedData = await fetch("http://localhost:3000/api/userInfo", {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(e),
-//   });
-//   let data = await ImportedData.json();
-//   setdataD(data);
-//   // // console.log(data);
-//   return {
-//     props: { data },
-//   };
-// }

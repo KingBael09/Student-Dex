@@ -20,18 +20,13 @@ const Info = (props) => {
     });
     let data = await ImportedData.json();
     let finaldata = data;
-    // setDAMN(finalData);
-    console.log("This Statement go BRrrrrr......");
-    // console.log(finaldata);
     setinfo(finaldata);
-    console.log(finaldata);
   };
-  // useEffect
+  //? useEffect is Kinda Fucked Up as of Now!
   useEffect(() => {
-    dataService()
-  
-  }, [])
-  
+    dataService();
+  }, []);
+
   if (info === undefined) {
     return <div>LMAO</div>;
   } else {

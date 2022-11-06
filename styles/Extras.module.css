@@ -1,0 +1,44 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  flex-direction: column;
+  font-family: 'Jetbrains mono';
+  /* flex-grow: 1; */
+  /* gap: 2rem; */
+}
+
+.cardContainer {
+  flex-grow: 1;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bgColor);
+  margin: 5rem 0;
+  width: 85%;
+  border-radius: 40px;
+  position: relative;
+  gap: 1rem;
+  overflow: hidden;
+}
+.cardContainer > * {
+  /* flex-grow: 1; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardName {
+  display: flex;
+  flex-direction: column;
+  /* flex-grow: 0.5; */
+  font-size: 17px;
+}
+.cardValue{
+    font-size: 40px;
+}
+.special{
+    background-color: var(--subButton) ;
+}
