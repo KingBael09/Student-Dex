@@ -5,13 +5,20 @@ import {
   AiOutlineInfoCircle,
   AiOutlineUser,
   AiOutlineHome,
+  AiOutlineLogout,
 } from "react-icons/ai";
 
 import { RiCalendarCheckLine, RiArrowDownSLine } from "react-icons/ri";
 import { ImBooks } from "react-icons/im";
+import { useUserInfo } from "../context/userState";
 
 const Pannel = () => {
   // ?Done TODO: add global state to switch between home page blur on pannel hover
+  const [session, setsession] = useUserInfo();
+  const handleLogout = () => {
+    console.log("Logout Initiated");
+    setsession("waiting")
+  };
 
   return (
     <>
@@ -80,6 +87,18 @@ const Pannel = () => {
             </div>
             <div className={styles.linkName}>Attendance</div>
             {/* Attendance */}
+          </div>
+        </div>
+        <div
+          onClick={handleLogout}
+          className={[styles.navItem, styles.logout].join(" ")}
+        >
+          <div className={styles.heading}>
+            <div>
+              <AiOutlineLogout />
+            </div>
+            {/* About */}
+            <div className={styles.linkName}>Logout</div>
           </div>
         </div>
         <div className={styles.navItem}>

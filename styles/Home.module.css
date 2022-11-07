@@ -21,6 +21,9 @@
   display: flex;
   position: relative;
   user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* border: 1px solid black; */
 }
 
@@ -65,7 +68,7 @@
 
 .major {
   flex-grow: 0.79;
-  border-right:  2px solid black;
+  border-right: 2px solid black;
 }
 
 .extras {

@@ -8,7 +8,6 @@ import { useUserInfo } from "../context/userState";
 import { useRouter } from "next/router";
 import Login from "../components/login";
 import Extras from "../components/extras";
-// import { useEffect, useState } from "react";
 
 // ? Done TODO: Add blur on navbar Hover
 
