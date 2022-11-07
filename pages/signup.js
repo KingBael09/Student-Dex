@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/Signup.module.css";
 import Head from "next/head";
+import Link from "next/link";
 
 const Signup = () => {
   const [FName, setFName] = useState("");
@@ -121,7 +122,7 @@ const Signup = () => {
             <div className={styles.flexWrap}>
               <div className={styles.intFlex}>
                 <input
-                  className={styles.input}
+                  className={[styles.input, styles.radio].join(" ")}
                   type="radio"
                   value={"male"}
                   onChange={genChange}
@@ -132,7 +133,7 @@ const Signup = () => {
               </div>
               <div className={styles.intFlex}>
                 <input
-                  className={styles.input}
+                  className={[styles.input, styles.radio].join(" ")}
                   type="radio"
                   value={"female"}
                   onChange={genChange}
@@ -256,14 +257,6 @@ const Signup = () => {
   };
 
   const submit = () => {
-    // if (typeof window !== "undefined") {
-    //   const targ = document.querySelector(`.${styles.firstForm}`);
-    //   // targ.classList.add(addr);
-    //   console.log(targ);
-    // } else {
-    //   console.log("Lmao");
-    // }
-
     if (stage === 1) {
       return (
         <div className={styles.submit}>
@@ -336,13 +329,30 @@ const Signup = () => {
         <title>Sign Up</title>
       </Head>
       <div className={styles.wrapper}>
-        <div className={styles.heading}>Sign Up!</div>
-        <div className={styles.innerform}>
-          <form onSubmit={handleSubmit} className={styles.formBody}>
-            <div className={styles.actualForm}>{form()}</div>
-            {submitMain()}
-          </form>
-          {submit()}
+        <div className={styles.partA}>
+          <div className={styles.heading}>Sign Up!</div>
+          <div className={styles.innerform}>
+            <form onSubmit={handleSubmit} className={styles.formBody}>
+              <div className={styles.actualForm}>{form()}</div>
+              {submitMain()}
+            </form>
+            {submit()}
+          </div>
+        </div>
+        <div className={styles.partB}>
+          <div className={styles.loginRedirect}>
+            <div className={styles.header}>
+              <div>
+                <div>Already</div> <div>Registered</div>
+              </div>
+              <div>?</div>
+            </div>
+            <div className={[styles.loginButton, styles.submit].join(" ")}>
+              <Link href={'/'}>
+                <button>Login!</button>
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </div>

@@ -4,7 +4,8 @@
   align-items: center;
   height: 100%;
   flex-direction: column;
-  font-family: 'Jetbrains mono';
+  font-family: "Jetbrains mono";
+  user-select: none;
   /* flex-grow: 1; */
   /* gap: 2rem; */
 }
@@ -22,6 +23,8 @@
   position: relative;
   gap: 1rem;
   overflow: hidden;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 .cardContainer > * {
   /* flex-grow: 1; */
@@ -36,9 +39,9 @@
   /* flex-grow: 0.5; */
   font-size: 17px;
 }
-.cardValue{
-    font-size: 40px;
+.cardValue {
+  font-size: 40px;
 }
-.special{
-    background-color: var(--subButton) ;
+.special {
+  background-color: var(--subButton);
 }

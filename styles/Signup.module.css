@@ -14,14 +14,13 @@
 }
 
 .wrapper {
-  /* display: flex; */
-  /* padding: 20vh 25vw; */
   height: 75vh;
   width: 75vw;
   background-color: white;
   padding: 2rem;
   border-radius: 30px;
   box-shadow: rgba(0, 0, 0, 0.34) 0px 3px 10px;
+  display: flex;
 }
 
 .heading {
@@ -33,7 +32,6 @@
 }
 
 .innerform {
-  /* visibility: hidden; */
   padding: 1rem;
   margin-top: 2rem;
   font-family: "Jetbrains Mono";
@@ -47,9 +45,6 @@
   flex-direction: column;
   gap: 3vh;
   font-size: 1.2rem;
-  /* width: 60%; */
-  width: var(--signUpWidth);
-  /* transition: all 0.3s ease; */
 }
 
 .firstForm > div {
@@ -65,7 +60,6 @@
 
 .flexBox {
   display: flex;
-  /* justify-content: space-around; */
 }
 
 .flexWrap {
@@ -73,7 +67,6 @@
   /* padding-right: 10rem; */
   display: flex;
   gap: 5vw;
-  /* justify-content: space-evenly; */
   margin-left: 3vw;
 }
 
@@ -91,10 +84,6 @@
   flex-direction: column;
   gap: 3vh;
   font-size: 1.2rem;
-  /* width: 60%; */
-  width: var(--signUpWidth);
-
-  /* transition: all 0.3s ease; */
 }
 
 .secondForm > div {
@@ -165,6 +154,64 @@
   transition: all 0.3s ease-in-out;
 }
 
-.container{
+.container {
   user-select: none;
+}
+
+.radio[type="radio"] {
+  appearance: none;
+  border: none;
+  outline: 2px solid var(--depColor);
+  background-color: transparent !important;
+  outline-offset: 2px;
+}
+
+.radio[type="radio"]:checked {
+  background-color: var(--subButton) !important;
+  outline: 2px solid var(--subButton);
+}
+
+.intFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.partA {
+  flex: 0.5;
+}
+
+.partB {
+  margin-left: auto;
+  flex: 0.4;
+}
+
+.loginRedirect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: var(--subButton);
+  border-radius: 40px;
+  margin: 0 1rem;
+  gap: 2rem;
+}
+
+.header {
+  font-size: 2.5rem;
+  display: flex;
+  align-items: center;
+  font-family: "Jetbrains Mono";
+  font-weight: 900;
+}
+
+.header > :last-child {
+  font-size: 8rem;
+}
+
+.loginButton > button {
+  background-color: var(--state);
+  color: white;
 }
