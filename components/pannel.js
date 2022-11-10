@@ -16,8 +16,7 @@ const Pannel = () => {
   // ?Done TODO: add global state to switch between home page blur on pannel hover
   const [session, setsession] = useUserInfo();
   const handleLogout = () => {
-    console.log("Logout Initiated");
-    setsession("waiting")
+    setsession("waiting");
   };
 
   return (
