@@ -18,6 +18,9 @@
   --unfocusInvalid: #ffd4d4;
 
   --codeFont: "Jetbrains Mono";
+  --deeperState: #36b387;
+  --ultraDeep: #ff6872;
+  --ultraState:#288866;
 }
 
 html,
