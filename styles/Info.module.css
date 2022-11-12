@@ -1,6 +1,7 @@
 .hud {
   display: flex;
   align-items: center;
+  flex: 0.5;
 }
 
 .wrap {
@@ -40,7 +41,7 @@
 }
 
 .subSection {
-  margin-top: 4rem;
+  /* margin-top: 4rem; */
   flex: 1;
   display: flex;
   /* margin-top: auto;

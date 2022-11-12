@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Carousel.module.css";
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 const Carouesl = () => {
   const [choice, setchoice] = useState("first");
@@ -72,16 +73,17 @@ const Carouesl = () => {
   return (
     <div className={styles.container}>
       <div className={styles.wrap}>
-        <div className={styles.button}>
-          <button className={styles.left} onClick={handleLeft}>
-            {"<--"}
-          </button>
-          <button className={styles.right} onClick={handleRight}>
-            {"-->"}
-          </button>
+        <div className={styles.card}>
+          <div className={[styles.button, styles.left].join(" ")}>
+            <button onClick={handleLeft}>
+              <IoIosArrowBack />
+            </button>
+          </div>
+          {returnCard()}
+          <div className={[styles.button, styles.right].join(" ")}>
+            <button onClick={handleRight}><IoIosArrowForward /></button>
+          </div>
         </div>
-
-        <div className={styles.card}>{returnCard()}</div>
         <div className={styles.page}>
           <input
             type={"radio"}
