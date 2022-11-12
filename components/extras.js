@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import styles from "../styles/Extras.module.css";
-const Extras = () => {
+// import { useUserInfo } from "../Context/userState";
+
+const Extras = (props) => {
   const [totalStudent, settotalStudent] = useState(0);
 
   const getTotalStudent = async () => {
@@ -12,9 +14,19 @@ const Extras = () => {
     // console.log(totalStudent);
   };
 
+  const parameter = props.data;
+
   getTotalStudent();
+
   return (
     <div className={styles.container}>
+      <div className={styles.cardContainer}>
+        {/* <div className={styles.cardName}>Branch</div>
+        <span className={styles.colon}>:</span> */}
+        <div className={styles.altValue}>
+          <span>{parameter.Branch}</span>
+        </div>
+      </div>
       <div className={styles.cardContainer}>
         <div className={styles.cardName}>
           <div>Current</div> <div>Semister</div>
@@ -24,7 +36,7 @@ const Extras = () => {
           <span>V</span>
         </div>
       </div>
-      <div className={styles.cardContainer}>
+      <div className={[styles.cardContainer, styles.alt].join(" ")}>
         <div className={styles.cardName}>CGPA</div>
         <span className={styles.colon}>:</span>
         <div className={styles.cardValue}>

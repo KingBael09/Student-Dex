@@ -87,6 +87,7 @@ const Carouesl = () => {
             type={"radio"}
             name="page"
             checked={choice === "first" ? true : false}
+            readOnly
             //  {choice==='second'?'checked':null}
             className={styles.dom}
           ></input>
@@ -94,6 +95,7 @@ const Carouesl = () => {
             type={"radio"}
             name="page"
             checked={choice === "second" ? true : false}
+            readOnly
             className={styles.dom}
           ></input>
         </div>

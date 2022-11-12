@@ -1,5 +1,4 @@
 import * as fs from "fs";
-import { useUserInfo } from "../../Context/userState";
 
 // Reads File Database/student.js and redirects its content
 
