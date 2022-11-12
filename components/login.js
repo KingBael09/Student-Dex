@@ -23,8 +23,6 @@ const Login = (props) => {
 
   // !Experemental Code BELOW
 
-  // const handleLogin = (e) => {};
-
   const handleSubmit = (e) => {
     const info = { id: id, Pass: pass };
     callbackSet(info);
@@ -41,7 +39,6 @@ const Login = (props) => {
   };
 
   const callSessionValidator = async (e) => {
-    // console.log(e);
     let sentData = await fetch("http://localhost:3000/api/userSession", {
       method: "POST",
       headers: {
@@ -58,7 +55,6 @@ const Login = (props) => {
     } else if (resData.status == "Unavailable") {
       alert("User Not Found");
     } else {
-      // console.log("Welcome");
       setsome(e);
     }
   };
@@ -70,7 +66,6 @@ const Login = (props) => {
       <Head>
         <title>Login</title>
       </Head>
-      {/* <div className={styles.abs}>Student DEX</div> */}
       <div className={styles.mainWrap}>
         <div className={[styles.wrapper, styles.major].join(" ")}>
           <div className={styles.main}>
@@ -106,24 +101,17 @@ const Login = (props) => {
                     />
                   </div>
                   <div className={styles.submit}>
-                    {/* <Link href="/"> */}
                     <button>Login</button>
-                    {/* </Link> */}
                   </div>
                 </form>
               </div>
-              {/* <div className={styles.forgot}>Forgot Password</div> */}
             </div>
-            {/* <div className={styles.info}>Forgot Password?</div> */}
           </div>
         </div>
         <div className={[styles.secondaryWrapper, styles.secondary].join(" ")}>
           <div className={styles.main}>
             <div className={[styles.form, styles.secondaryForm].join(" ")}>
-              <div className={styles.secHeading}>
-                New Student
-                {/* <span className={styles.obj}>?</span> */}
-              </div>
+              <div className={styles.secHeading}>New Student</div>
               <div className={styles.signUp}>
                 <Link href="/signup">
                   <button>Sign Up</button>

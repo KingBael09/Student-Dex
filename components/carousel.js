@@ -19,10 +19,6 @@ const Carouesl = () => {
     return res;
   };
 
-  // const getNews =()=>{
-
-  // }
-
   const returnCard = () => {
     if (choice === "first") {
       return (
@@ -81,7 +77,9 @@ const Carouesl = () => {
           </div>
           {returnCard()}
           <div className={[styles.button, styles.right].join(" ")}>
-            <button onClick={handleRight}><IoIosArrowForward /></button>
+            <button onClick={handleRight}>
+              <IoIosArrowForward />
+            </button>
           </div>
         </div>
         <div className={styles.page}>
@@ -90,7 +88,6 @@ const Carouesl = () => {
             name="page"
             checked={choice === "first" ? true : false}
             readOnly
-            //  {choice==='second'?'checked':null}
             className={styles.dom}
           ></input>
           <input

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styles from "../styles/Pannel.module.css";
 import Link from "next/link";
 import {
@@ -21,18 +21,13 @@ const Pannel = () => {
 
   return (
     <>
-      <nav
-        className={styles.navBody}
-        // onMouseEnter={OverMouse}
-        // onMouseLeave={LeaveMouse}
-      >
+      <nav className={styles.navBody}>
         <div className={styles.navItem}>
           <Link href={"/"}>
             <div className={styles.heading}>
               <div>
                 <AiOutlineHome />
               </div>
-              {/* Home */}
               <div className={styles.linkName}>Home</div>
             </div>
           </Link>
@@ -42,9 +37,7 @@ const Pannel = () => {
             <div>
               <AiOutlineUser />
             </div>
-            {/* Student */}
             <div className={styles.linkName}>Student</div>
-            {/* <div className={styles.arrow}><RiArrowDownSLine/></div> */}
           </div>
           <div className={styles.pList}>
             <div className={styles.listItem}>
@@ -64,8 +57,6 @@ const Pannel = () => {
               <ImBooks />
             </div>
             <div className={styles.linkName}>Academics</div>
-            {/* <div className={styles.arrow}><RiArrowDownSLine/></div> */}
-            {/* Academics */}
           </div>
           <div className={styles.pList}>
             <div className={styles.listItem}>
@@ -85,7 +76,6 @@ const Pannel = () => {
               <RiCalendarCheckLine />
             </div>
             <div className={styles.linkName}>Attendance</div>
-            {/* Attendance */}
           </div>
         </div>
         <div
@@ -96,7 +86,6 @@ const Pannel = () => {
             <div>
               <AiOutlineLogout />
             </div>
-            {/* About */}
             <div className={styles.linkName}>Logout</div>
           </div>
         </div>
@@ -105,7 +94,6 @@ const Pannel = () => {
             <div>
               <AiOutlineInfoCircle />
             </div>
-            {/* About */}
             <div className={styles.linkName}>About</div>
           </div>
         </div>

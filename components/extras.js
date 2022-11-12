@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/Extras.module.css";
-// import { useUserInfo } from "../Context/userState";
 
 const Extras = (props) => {
   const [totalStudent, settotalStudent] = useState(0);
@@ -37,8 +36,6 @@ const Extras = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.cardContainer}>
-        {/* <div className={styles.cardName}>Branch</div>
-        <span className={styles.colon}>:</span> */}
         <div className={styles.altValue}>
           <span>{parameter.Branch}</span>
         </div>

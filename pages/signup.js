@@ -348,7 +348,7 @@ const Signup = () => {
               <div>?</div>
             </div>
             <div className={[styles.loginButton, styles.submit].join(" ")}>
-              <Link href={'/'}>
+              <Link href={"/"}>
                 <button>Login!</button>
               </Link>
             </div>

@@ -9,11 +9,6 @@ const clock = () => {
   const [min, setmin] = useState("0");
   const [sec, setsec] = useState("0");
   const [session, setsession] = useState("AM");
-  // const [allValue, setallValue] = useState({
-  //   hrs:'0',
-  //   mns:'0',
-  //   soc:'0'
-  // })
 
   useEffect(() => {
     setInterval(() => {
@@ -22,10 +17,8 @@ const clock = () => {
       let m = date.getMinutes().toString();
       let s = date.getSeconds().toString();
 
-      // setallValue({h,m,s});
       setmin(m);
       setsec(s);
-      // const demo = `abc ${}`
       if (h >= 12) {
         setsession("PM");
         sethour((h = h - 12));
@@ -37,14 +30,11 @@ const clock = () => {
           sethour(h);
         }
       }
-
-      // sethour(h);
     }, 1000);
   }, []);
 
   return (
     <div className={styles.data}>
-      {/* {allValue} */}
       <span className={styles.clockElem}>{hour}:</span>
       <span className={styles.clockElem}>{min}:</span>
       <span className={styles.clockElem}>{sec} </span>

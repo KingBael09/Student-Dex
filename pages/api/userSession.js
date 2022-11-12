@@ -7,7 +7,6 @@ export default async function handler(req, res) {
       let data = await fs.promises.readFile(
         `Database/Users/${req.body.id}.json`
       );
-      // console.log(req.body.id);
 
       let finalData = JSON.parse(data);
 

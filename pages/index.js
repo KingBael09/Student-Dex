@@ -5,7 +5,6 @@ import Info from "../components/Info";
 import Link from "next/link";
 import Pannel from "../components/pannel";
 import { useUserInfo } from "../context/userState";
-import { useRouter } from "next/router";
 import Login from "../components/login";
 import Extras from "../components/extras";
 import React, { useEffect, useState } from "react";
@@ -13,7 +12,6 @@ import React, { useEffect, useState } from "react";
 // ? Done TODO: Add blur on navbar Hover
 
 export default function Home(props) {
-  // const router = useRouter();
   const [session, setsession] = useUserInfo();
   const [info, setinfo] = useState();
 
@@ -69,8 +67,6 @@ export default function Home(props) {
               </div>
             </div>
           </main>
-
-          {/* <footer className={styles.footer}></footer> */}
         </div>
       </>
     );
