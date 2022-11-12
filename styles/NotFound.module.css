@@ -1,46 +1,42 @@
 .content {
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
-        "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
-    /* height: 100vh; */
-    text-align: center;
+  font-family: var(--codeFont);
+  text-align: center;
 
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .nextErrorMsg {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .firstBlock {
-    border-right: 1px solid black;
-    padding: 0 2em;
+  border-right: 1px solid black;
+  padding: 0 2em;
 }
 
 .container {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: -apple-system, BlinkMacSystemFont, Roboto, "Segoe UI",
-        "Fira Sans", Avenir, "Helvetica Neue", "Lucida Grande", sans-serif;
-    gap: 2rem;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .home {
-    border-radius: 40px;
-    /* background-color: #f1f1f1; */
-    background-color: var(--bgColor);
-    padding: 0 9rem;
-    cursor: pointer;
-    box-shadow: 0 0 4px rgb(171, 171, 171);
+  font-family: var(--codeFont);
+  border-radius: 40px;
+  background-color: var(--bgColor);
+  padding: 0 9rem;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgb(171, 171, 171);
 }
 
 .home:active {
-    box-shadow: 0 0 8px rgb(171, 171, 171);
-    background-color: var(--depColor);
+  box-shadow: 0 0 8px rgb(171, 171, 171);
+  background-color: var(--depColor);
 }

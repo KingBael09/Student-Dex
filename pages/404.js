@@ -2,13 +2,14 @@ import Link from "next/link";
 import React from "react";
 // import { useRouter } from "next/router";
 import styles from "../styles/NotFound.module.css";
+import Head from "next/head";
 
 const custom404 = () => {
-  // const router = useRouter();
-  // console.log(router);
-
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Page Not Found!</title>
+      </Head>
       <div className={styles.content}>
         <div className={styles.firstBlock}>
           <h1 className={styles.nextError}>404</h1>

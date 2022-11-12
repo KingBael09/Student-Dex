@@ -1,238 +1,202 @@
 .container {
-    display: flex;
-    justify-content: center;
-    /* align-content: center; */
-    align-items: center;
-    height: 100vh;
-    width: 100vw;
-    /* font-family: "Roboto", sans-serif; */
-    font-family: var(--codeFont);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  font-family: var(--codeFont);
 }
 
 .mainWrap {
-    display: flex;
-    /* flex-direction: column; */
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .wrapper {
-    padding: 2rem;
-    user-select: none;
-    background-color: var(--whiteOffset);
+  padding: 2rem;
+  user-select: none;
+  background-color: var(--whiteOffset);
 }
 
 .secondaryWrapper {
-    user-select: none;
-    padding: 2rem;
-    border-radius: 50px 0 0 50px;
-    /* height: 40vh; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  user-select: none;
+  padding: 2rem;
+  border-radius: 50px 0 0 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 2rem;
-    height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 2rem;
+  height: 20rem;
 }
-.secondaryForm{
-    justify-content: center !important;
-    /* font-family: "Roboto", sans-serif; */
-
+.secondaryForm {
+  justify-content: center !important;
 }
 
 .input {
-    padding: 10px;
-    text-decoration: none;
-    border: none;
-    outline: none;
-    background-color: var(--slightHue);
-    /* background-color: var(--slightHue); */
-    border-radius: 40px;
-    transition: 0.3s ease-in-out;
+  padding: 10px;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background-color: var(--slightHue);
+  border-radius: 40px;
+  transition: 0.3s ease-in-out;
 }
 
 .heading {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .innerForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 1rem;
-    /* align-items: center; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .field {
-    flex-grow: 1;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    gap: 10px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.field>input {
-    flex-grow: 1;
+.field > input {
+  flex-grow: 1;
 }
 
 .info {
-    font-size: smaller;
+  font-size: smaller;
 }
 
 .wrapper {
-    /* background-color: green; */
-    /* border-radius: 50px; */
-    border-radius: 50px 0 0 50px;
-    /* height: 40vh; */
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    /* padding: 2rem; */
-    /* color: aqua; */
-    /* margin:  4rem 0; */
-    /* height: 20rem; */
+  border-radius: 50px 0 0 50px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 .submit {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* cursor: crosshair; */
-    /* margin-block-end: auto; */
-    /* bottom: auto; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.submit>button {
-    cursor: pointer;
-    border: none;
-    /* background-color: none; */
-    /* color: none; */
-    /* text-decoration: none; */
-    padding: 1em 0;
-    background-color: var(--depColor);
-    border-radius: 40px;
-    flex-grow: 0.5;
-    font-weight: bolder;
-    font-size: 14px;
-    transition: all 0.3s;
-    box-shadow: 1px 1px 1px black;
-    /* color: white; */
+.submit > button {
+  cursor: pointer;
+  border: none;
+  padding: 1em 0;
+  background-color: var(--depColor);
+  border-radius: 40px;
+  flex-grow: 0.5;
+  font-weight: bolder;
+  font-size: 14px;
+  transition: all 0.3s;
+  box-shadow: 1px 1px 1px black;
 }
 
-.submit>button:hover {
-    background-color: var(--subButton);
-    color: white;
+.submit > button:hover {
+  background-color: var(--subButton);
+  color: white;
 }
 
-.submit>button:active {
-    box-shadow: none;
+.submit > button:active {
+  box-shadow: none;
 }
 
 .input:required:valid {
-    background-color: var(--validated);
+  background-color: var(--validated);
 }
 
 .input:required:focus:valid {
-    background-color: var(--validInput);
+  background-color: var(--validInput);
 }
 
 .input:not(:placeholder-shown):invalid {
-    background-color: var(--invalid);
-    /* box-shadow: 1px 1px 0px red; */
+  background-color: var(--invalid);
 }
 
 .input:focus:invalid {
-    background-color: var(--invalidInput);
+  background-color: var(--invalidInput);
 }
 
 .submit {
-    margin-top: 2rem;
+  margin-top: 2rem;
 }
 
-/* .forgot{
-    position: absolute;
-    bottom: 0;
-} */
 .major {
-    flex: 2;
+  flex: 2;
 }
 
 .secondary {
-    flex: 1;
-    height: 20rem;
-    border-radius: 0 50px 50px 0;
-    background-color: var(--subButton);
-    padding: 2rem 3rem;
-    justify-content: center !important;
-    align-items: center;
+  flex: 1;
+  height: 20rem;
+  border-radius: 0 50px 50px 0;
+  background-color: var(--subButton);
+  padding: 2rem 3rem;
+  justify-content: center !important;
+  align-items: center;
 }
 
 .secHeading {
-    color: var(--whiteOffset);
-    font-size: 25px;
-    position: relative;
-    font-weight: 900;
-    /* vertical-align: middle; */
-    /* text-align: center; */
+  color: var(--whiteOffset);
+  font-size: 25px;
+  position: relative;
+  font-weight: 900;
 }
 
 .secHeading::after {
-    /* display: inline-block; */
-    bottom: 0%;
-    position: absolute;
-    content: " ?";
-    font-size: 90px;
-    color: var(--state);
-    transform: translateY(10%);
-    /* border: black; */
-    /* outline: black; */
+  bottom: 0%;
+  position: absolute;
+  content: " ?";
+  font-size: 90px;
+  color: var(--state);
+  transform: translateY(10%);
 }
 
 .obj {
-    font-size: 60px;
-    color: var(--bgColor);
+  font-size: 60px;
+  color: var(--bgColor);
 }
 
-.signUp>button {
-    background-color: transparent;
-    outline: none;
-    border: none;
-    color: var(--whiteOffset);
-    box-shadow: 1px 1px 3px black;
-    border-radius: 40px;
-    padding: 1rem 2rem;
-    /* flex-grow: 0.5; */
-    font-weight: 900;
-    /* margin: 1rem; */
-    min-width: 40%;
-    transition: 0.3s ease-in-out;
+.signUp > button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: var(--whiteOffset);
+  box-shadow: 1px 1px 3px black;
+  border-radius: 40px;
+  padding: 1rem 2rem;
+  font-weight: 900;
+  min-width: 40%;
+  transition: 0.3s ease-in-out;
 }
 
-.signUp>button:hover {
-    background-color: var(--state);
-    color: white;
+.signUp > button:hover {
+  background-color: var(--state);
+  color: white;
 }
 
-.signUp>button:active {
-    box-shadow: none;
+.signUp > button:active {
+  box-shadow: none;
 }
 
-.signUp>button:hover:after {
-    position: absolute;
-    content: "!";
+.signUp > button:hover:after {
+  position: absolute;
+  content: "!";
 }
 
 .abs {
-    position: absolute;
-    font-size: 70px;
-    /* top: 10%; */
-    top: 2rem;
+  position: absolute;
+  font-size: 70px;
+  top: 2rem;
 }

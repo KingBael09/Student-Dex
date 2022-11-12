@@ -1,20 +1,15 @@
 .container {
   display: flex;
   flex: 1;
-  /* flex-grow: 1; */
   margin-right: 2rem;
   margin-top: 3rem;
-  /* background-color: red; */
-  /* overflow: hidden; */
+  user-select: none;
 }
 
 .wrap {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  /* background-color: red; */
-  /* overflow: hidden; */
-  /* margin-block: auto; */
 }
 
 .button > button {
@@ -33,29 +28,21 @@
   align-items: center;
 }
 
-
-
 .button > button:hover {
-  /* background-color: var(--deeperState); */
   color: var(--ultraState) !important;
 }
 
 .heading {
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   padding: 1rem;
   gap: 1rem;
   font-family: var(--codeFont);
   font-weight: 900;
   font-size: 35px;
-
-  /* background-color: rebeccapurple; */
 }
 
 .value {
-  /* margin-left: 10%; */
-  /* margin-left: auto; */
   position: relative;
   display: flex;
   justify-content: center;
@@ -75,14 +62,12 @@
 }
 
 .subMenu {
-  /* border: 1px solid black; */
   box-shadow: 0 0 2px black;
   border-radius: 40px;
   padding: 2rem;
   flex-grow: 1;
   display: flex;
   flex-direction: column;
-  /* transition: all 0.3s ease-in-out; */
 }
 
 .alert {
@@ -103,11 +88,9 @@
 
 .pointRed {
   background-color: var(--ultraDeep);
-  /* padding: 2rem; */
 }
 
 .pointBlack {
-  /* background-color: black; */
   background-color: var(--ultraState);
 }
 
@@ -122,13 +105,9 @@
   display: flex;
   padding: 1rem;
   flex-direction: column;
-  /* gap: 2rem; */
-
-  /* overflow: hidden; */
 }
 
 .content > div > div {
-  /* outline: 1px solid black; */
   box-shadow: 1px 1px 2px black;
   height: 15px;
   width: 15px;
@@ -138,16 +117,9 @@
 .card {
   display: flex;
   justify-content: center;
-  /* align-items: center; */
-  /* align-items: initial; */
   flex: 1;
   height: 100%;
   position: relative;
-  /* overflow: hidden; */
-}
-
-.card > * {
-  /* flex: 1; */
 }
 
 .page {
@@ -172,8 +144,6 @@
 
 .news {
   display: flex;
-  /* align-items: center;
-  justify-content: center; */
 }
 
 .button {
@@ -182,16 +152,13 @@
 }
 
 .left {
-  /* top: 50%; */
   left: 0px;
 }
 
 .right {
-  /* top: 50%; */
   right: 0px;
 }
 
 .card:hover .button > button {
-  /* background-color: ; */
   color: rgb(187, 187, 187);
 }

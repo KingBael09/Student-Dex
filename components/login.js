@@ -32,10 +32,11 @@ const Login = (props) => {
   };
 
   const callbackSet = (e) => {
-    // setsome(e);
-    if (typeof window != "undefined") {
-      sessionStorage.setItem("id", e.uid);
-    }
+    // if (typeof window != "undefined") {
+    //   sessionStorage.setItem("user", e.id);
+    //   sessionStorage.setItem("pass", e.Pass);
+    // }
+
     callSessionValidator(e);
   };
 

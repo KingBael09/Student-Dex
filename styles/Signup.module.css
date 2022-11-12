@@ -1,7 +1,6 @@
 .container {
   height: 100vh;
   width: 100vw;
-  /* background-image: linear-gradient(140deg, #ffffff 0%, var(--subColor) 50%, var(--bgColor) 75%); */
   background-image: linear-gradient(
     140deg,
     var(--slightHue) 5%,
@@ -64,7 +63,6 @@
 
 .flexWrap {
   flex-grow: 1;
-  /* padding-right: 10rem; */
   display: flex;
   gap: 5vw;
   margin-left: 3vw;
@@ -129,7 +127,6 @@
   border: none;
   outline: none;
   background-color: var(--subButton);
-  /* background-color: inherit; */
   font-family: var(--codeFont);
   padding: 1rem 3rem;
   border-radius: 30px;

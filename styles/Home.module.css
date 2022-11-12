@@ -1,17 +1,8 @@
 .mainPage {
-  /* margin-left: 8rem; */
-  /* margin: 0rem 2rem 2rem 8rem; */
   margin-left: 8rem;
-  /* padding: 1rem; */
-
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* border-radius: 40px;
-  box-shadow: 0 0 2px black; */
-  /* background-color: black; */
 }
 
 .header {
@@ -24,7 +15,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 1px solid black; */
 }
 
 .Clock {
@@ -33,27 +23,17 @@
 
 .header::after {
   position: absolute;
-  /* top: 100%; */
   bottom: 25%;
   left: 1%;
   content: "";
   width: 40%;
   display: block;
-
   background: linear-gradient(to right, black, white);
-  /* border-radius: 50%; */
-
   height: 1px;
 }
 
 .wrap {
-  /* padding: 20rem; */
-  /* margin: 2rem; */
-  /* padding: 20rem; */
   display: flex;
-
-  /* border-radius: 20px;
-  box-shadow: 0 0 4px black; */
   height: 85vh;
   gap: 2rem;
 }
@@ -65,7 +45,6 @@
 }
 
 .extras {
-  /* flex-grow: 0.2; */
   flex: 0.2;
 }
 

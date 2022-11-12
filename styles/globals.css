@@ -20,7 +20,7 @@
   --codeFont: "Jetbrains Mono";
   --deeperState: #36b387;
   --ultraDeep: #ff6872;
-  --ultraState:#288866;
+  --ultraState: #288866;
 }
 
 html,
@@ -36,7 +36,6 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  /* background: #f1f1; */
   background: #d5ffff;
 }
 

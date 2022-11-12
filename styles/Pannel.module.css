@@ -5,26 +5,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   margin: 0;
   padding: 0;
-  /* background-color: rgb(77, 77, 77); */
   background-color: var(--bgColor);
   transition: all ease 0.3s;
   border-radius: 0 5px 5px 0px;
-
   user-select: none;
-  /* box-shadow: 0 0 2px black;    */
   z-index: 97;
   overflow: hidden;
 }
 
 .navItem {
-  /* margin-left: 1rem; */
-  /* padding-left: 1rem; */
   display: flex;
   flex-direction: column;
-  /* flex-grow: 1; */
   width: 100%;
   transition: 0.5s ease;
   cursor: pointer;
@@ -37,14 +30,9 @@
   font-size: 2rem;
   height: 5rem;
   display: flex;
-  /* margin-left: 2rem; */
-  /* padding-inline: 2rem; */
   padding-left: 2rem;
-  /* padding-right: 2rem; */
-  /* width: 0; */
   gap: 1rem;
   align-items: center;
-  /* position: relative; */
 }
 
 .logout {
@@ -64,14 +52,8 @@
   transform: translateX(2rem);
   visibility: hidden;
   transition: all 0.2s ease-in-out;
-
   font-size: 1.5rem;
-  /* position: relative; */
   /* ? Visiblity Not good for audio softwars, pageReaders */
-
-  /* Added for Down Arrow */
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .navBody:hover {
@@ -81,45 +63,24 @@
 }
 
 .navBody:hover .linkName {
-  /* display: block; */
   transform: translateX(0);
   visibility: visible;
 }
 
-/* .heading:hover {
-    background-color: rgb(48, 48, 48);
-    
-} */
-
 .navItem:hover {
-  /* background-color: rgb(48, 48, 48); */
   background-color: var(--subColor);
 }
 
 .pList {
-  /* display: none; */
-  /* visibility: hidden; */
   height: 0;
   visibility: hidden;
   opacity: 0;
-  /* transition: all 0.2s ease-in-out; */
-  /* position: absolute; */
-  /* left: 100%; */
-  /* background-color: rgb(77, 77, 77); */
   background-color: var(--subColor);
   transition: all 0.3s ease;
   border-radius: 10px;
-  /* overflow: hidden; */
-  /* display: none; */
-  /* border-radius: 0 5px 5px 0; */
-  /* box-shadow: 0px 0 2px black; */
-  /* clip-path: inset(-2px -2px -2px 0px); */
-  /* top: 50%; */
-  /* padding: 0 1rem 1rem 1rem; */
 }
 
 .listItem {
-  /* padding: 1.5rem; */
   height: 5rem;
   padding: 0 2rem;
   display: flex;
@@ -128,7 +89,6 @@
   border-radius: 0 5px 5px 0;
   font-size: 1.3rem;
   border-radius: 10px;
-  /* position: absolute; */
 }
 
 .listItem span {
@@ -136,30 +96,20 @@
 }
 
 .listItem:hover {
-  /* background-color: rgb(48, 48, 48); */
-  /* box-shadow: 1px 1px 2px black; */
   background-color: var(--depColor);
-
-  /* overflow: hidden; */
 }
 
 .navItem:has(.pList):hover .pList {
-  /* display: block; */
   height: 15rem;
   visibility: visible;
   opacity: 1;
   border-radius: 10px;
-  /* transition: all 0.3s ease; */
-  /* display: block; */
 }
 
 .blur {
-  /* transition: all 5.3s ease; */
   transition: all 0.3s ease, width 0s;
   width: 0vw;
   user-select: none;
-
-  /* transform-origin: left; */
 }
 
 .navBody:is(:hover) + .blur {
@@ -171,5 +121,4 @@
   background: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(2px);
   z-index: 95;
-  /* border-radius: 10px; */
 }

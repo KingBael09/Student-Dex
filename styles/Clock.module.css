@@ -1,9 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto+Mono:ital,wght@1,900&family=Roboto:wght@900&display=swap'); */
-.data{
-    font-family: 'Roboto Mono', monospace;
-    /* font-size: x-large; */
-    user-select: none;
-    /* font-size: 30px; */
+.data {
+  font-family: "Roboto Mono", monospace;
+  user-select: none;
 }
-
- 
