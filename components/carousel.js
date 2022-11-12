@@ -105,14 +105,3 @@ const Carouesl = () => {
 
 export default Carouesl;
 
-{
-  /* <div className={styles.overflow}>
-        <div className={[styles.Notice, styles.section].join(" ")}>
-          <div className={styles.heading}>Notice</div>
-        </div>
-
-        <div className={[styles.Attendance, styles.section].join(" ")}>
-          <div className={styles.heading}>Attendance</div>
-        </div>
-      </div> */
-}
