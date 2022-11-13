@@ -12,8 +12,9 @@
   "Religion": "Default String",
   "PhysicalHandicap": "Default Boolean",
   "Gender": "Default String",
-  "Mail": "jayesh0071@outlook.com",
+  "Mail": "Default String",
   "AdmissionData": "Default String",
   "CSEM": "Default Number",
-  "CGPA": "Default Number"
+  "CGPA": "Default Number",
+  "Attendance": "Default Number"
 }
