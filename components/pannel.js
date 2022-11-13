@@ -43,9 +43,11 @@ const Pannel = () => {
             <div className={styles.listItem}>
               <span>Course Registration</span>
             </div>
-            <div className={styles.listItem}>
-              <span>Student Details</span>
-            </div>
+            <Link href={'/details'}>
+              <div className={styles.listItem}>
+                <span>Student Details</span>
+              </div>
+            </Link>
             <div className={styles.listItem}>
               <span>Admissions</span>
             </div>

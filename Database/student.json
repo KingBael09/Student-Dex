@@ -3,24 +3,17 @@
   "LName": "Default String",
   "RollNo": "Default String",
   "Branch": "Default String",
-  "Semester": "Default String",
-  "DOB": {
-    "Day": "Default Number",
-    "Month": "Default Number",
-    "Year": "Default Number"
-  },
+  "DOB": "Default String",
   "Nationality": "Default String",
-  "Phone": "Defalut Number",
+  "Phone": "Default Number",
   "Address": "Default String",
   "Catagory": "Default String",
   "City": "Default String",
   "Religion": "Default String",
-  "PhysicalHandicap": "Defalut Boolean",
+  "PhysicalHandicap": "Default Boolean",
   "Gender": "Default String",
   "Mail": "jayesh0071@outlook.com",
-  "AdmissionData": {
-    "Day": "Default Number",
-    "Month": "Default Number",
-    "Year": "Default Number"
-  }
+  "AdmissionData": "Default String",
+  "CSEM": "Default Number",
+  "CGPA": "Default Number"
 }
