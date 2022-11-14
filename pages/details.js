@@ -21,10 +21,7 @@ const Details = () => {
         </Head>
 
         <div className={styles.wrap}>
-          <div>
-            <div className={styles.staticDetail}>Lmao</div>
-          </div>
-          <div className={styles.dynamicDetail}>Lmao</div>
+         
         </div>
       </div>
     );

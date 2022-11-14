@@ -2,6 +2,10 @@ import * as fs from "fs";
 
 export default async function handler(req, res) {
   if (req.method === "POST") {
+    const folderName = "Database/Users";
+    if (!fs.existsSync(folderName)) {
+      fs.mkdirSync(folderName);
+    }
     const userAvail = `Database/Users/${req.body.id}.json`;
     if (fs.existsSync(userAvail)) {
       let data = await fs.promises.readFile(

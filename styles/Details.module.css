@@ -4,17 +4,4 @@
 .wrap {
   /* background-color: red; */
   display: flex;
-  position: relative;
-}
-
-.staticDetail {
-  height: 80vh;
-  top: 50%;
-  background-color: rebeccapurple;
-  position: absolute;
-}
-
-.dynamicDetail {
-  margin-left: 2rem;
-  background-color: aqua;
 }
