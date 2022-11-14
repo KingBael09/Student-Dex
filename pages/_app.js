@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { UserData } from "../context/userState";
-import { DataDesign } from "../Context/dataHolder";
+// import { DataDesign } from "../Context/dataHolder";
 import { useRouter } from "next/router";
 import Pannel from "../components/pannel";
 

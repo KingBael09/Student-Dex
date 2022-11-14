@@ -1,27 +1,23 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 const Context = createContext();
 
 export function UserData({ children }) {
+  let getItem = {};
   const [session, setsession] = useState("waiting");
 
   // useEffect(() => {
+  //   const user = sessionStorage.getItem("user");
+  //   const pass = sessionStorage.getItem("pass");
+  //   if (session === "waiting") {
+  //     if (user != undefined) {
+  //       setsession({ id: user, Pass: pass });
+  //       // This Has Some Problem In it causing some internal fetching problems
+  //     }
+  //   }
   //   if (session != "waiting") {
-  //     // console.log("Lmao");
-  //     if (typeof window != "undefined") {
-  //       sessionStorage.setItem("user", session.id);
-  //       sessionStorage.setItem("pass", session.Pass);
-  //     }
-  //     if (session === undefined) {
-  //       if (sessionStorage.getItem("user" != undefined)) {
-  //         let arr = new Array();
-  //         arr[0] = sessionStorage.getItem("user");
-  //         arr[1] = sessionStorage.getItem("pass");
-  //         // console.log(arr);
-  //         setsession(arr);
-  //       }
-  //       setsession("waiting");
-  //     }
+  //     sessionStorage.setItem("user", session.id);
+  //     sessionStorage.setItem("pass", session.Pass);
   //   }
   // }, [session]);
 

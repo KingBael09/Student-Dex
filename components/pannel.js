@@ -43,7 +43,7 @@ const Pannel = () => {
             <div className={styles.listItem}>
               <span>Course Registration</span>
             </div>
-            <Link href={'/details'}>
+            <Link href={"/details"}>
               <div className={styles.listItem}>
                 <span>Student Details</span>
               </div>

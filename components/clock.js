@@ -16,14 +16,13 @@ const clock = () => {
       let h = date.getHours().toString();
       let m = date.getMinutes().toString();
       let s = date.getSeconds().toString();
-
       setmin(m);
       setsec(s);
       if (h >= 12) {
         setsession("PM");
         sethour((h = h - 12));
       } else {
-        if (h == 0) {
+        if (h == 0 && session === "PM") {
           h = 12;
           sethour(h);
         } else {
@@ -31,7 +30,7 @@ const clock = () => {
         }
       }
     }, 1000);
-  }, []);
+  }, [session]);
 
   return (
     <div className={styles.data}>

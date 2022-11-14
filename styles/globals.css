@@ -39,7 +39,11 @@ body {
   background: #d5ffff;
 }
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(182, 77%, 30%);
+}
 ::-webkit-scrollbar-thumb {
   border-radius: 80px;
+  border: 2px solid #d5ffff;
   background-color: #43e0e6;
 }
