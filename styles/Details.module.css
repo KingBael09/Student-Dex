@@ -174,20 +174,21 @@
   right: 10px;
   border: 0;
   background-color: var(--bgColor);
-
+  cursor: pointer;
   border-radius: 50%;
   transition: all 0.2s ease;
 
   height: 5rem;
   width: 5rem;
 
-  overflow: hidden;
+  /* overflow: hidden; */
   display: flex;
   justify-content: center;
   align-items: center;
 
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
 .editButton:active {
   box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.23) 0px 3px 3px;
 }
@@ -196,10 +197,30 @@
   background-color: var(--subButton);
 }
 
+.editButton:after {
+  content: "Edit";
+  position: absolute;
+  top: 100%;
+  font-size: 1.1rem;
+  font-family: var(--codeFont);
+  font-weight: 900;
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 80;
+}
+
+.editButton:hover::after {
+  margin-top: 1rem;
+  opacity: 1;
+  visibility: visible;
+}
+
 .buttonContent {
   content: url("../public/editButton.svg");
   padding: 1rem;
   transition: all 0.2s ease-in-out;
+  /* cursor: pointer; */
 }
 
 .select {
@@ -219,7 +240,7 @@
 .button {
   border: 0;
   background-color: var(--bgColor);
-
+  cursor: pointer;
   /* border-radius: 50%; */
   transition: all 0.2s ease;
   /* 
@@ -256,6 +277,116 @@
 .first {
   border-radius: 40px 0 0 40px;
 }
+
 .second {
   border-radius: 0 40px 40px 0;
+}
+
+.cgpaBlock,
+.csemBlock,
+.branchBlock {
+  position: relative;
+}
+
+.cgpaBlock::after,
+.csemBlock::after,
+.branchBlock::after {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  top: 80%;
+  transition: all 0.2s ease-in-out;
+}
+
+.cgpaBlock::after {
+  content: "CGPA";
+}
+
+.csemBlock::after {
+  content: "Semester";
+}
+
+.branchBlock::after {
+  content: "Branch";
+}
+
+.csemBlock:hover::after,
+.cgpaBlock:hover::after,
+.branchBlock:hover::after {
+  visibility: visible;
+  opacity: 1;
+  top: 100%;
+}
+
+.confirmContainer {
+  background-color: hsla(0, 0%, 0%, 0.155);
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 98;
+  backdrop-filter: blur(5px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.box {
+  height: 30vh;
+  width: 40vw;
+  background-color: white;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.msg {
+  font-family: var(--codeFont);
+  font-weight: 900;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.options {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.yes,
+.no {
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.511);
+  cursor: pointer;
+}
+
+.yes {
+  background-color: var(--subButton);
+  border-radius: 40px;
+}
+
+.yes:hover {
+  background-color: var(--subButton);
+}
+
+.no {
+  background-color: var(--state);
+  border-radius: 40px;
+}
+
+.no:hover {
+  background-color: var(--state);
+}
+
+.qMark {
+  font-size: 3rem;
+  color: var(--uniqueState);
 }

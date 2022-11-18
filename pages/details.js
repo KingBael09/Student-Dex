@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from "../styles/Details.module.css";
 import Head from "next/head";
 import { useUserInfo } from "../context/userState";
@@ -11,12 +11,50 @@ const Details = () => {
   const [session, setsession] = useUserInfo();
   const [Logged, setLogged] = useUserData();
   const [edit, setedit] = useState("false");
+  const [warning, setWarning] = useState("false");
   const parameter = Logged;
 
-  useEffect(() => {}, []);
+  const postReq = () => {
+    console.log("Request Must be Post");
+  };
+
+  const displayWarning = () => {
+    if (warning === "true") {
+      return (
+        <div className={styles.confirmContainer}>
+          <div className={styles.box}>
+            <div className={styles.msg}>
+              Are You Sure You Want to Continue
+              <span className={styles.qMark}>?</span>
+            </div>
+            <div className={styles.options}>
+              <button
+                onClick={() => {
+                  postReq();
+                  setWarning("false");
+                  setedit("false");
+                }}
+                className={[styles.button, styles.yes].join(" ")}
+              >
+                Yes
+              </button>
+              <button
+                onClick={() => {
+                  setedit("false");
+                  setWarning(false);
+                }}
+                className={[styles.button, styles.no].join(" ")}
+              >
+                No
+              </button>
+            </div>
+          </div>
+        </div>
+      );
+    }
+  };
 
   const submitHandle = () => {
-    console.log("Lmao");
     setedit("true");
   };
 
@@ -25,7 +63,7 @@ const Details = () => {
   };
 
   const handleEdit = () => {
-    setedit("false");
+    setWarning("true");
   };
 
   const formSelection = () => {
@@ -254,17 +292,14 @@ const Details = () => {
                     </div>
                   </div>
                   <div className={[styles.info, styles.Name].join(" ")}>
-                    {/* <div>Name</div> */}
                     <div>
                       {parameter.FName} {parameter.LName}
                     </div>
                   </div>
                   <div className={[styles.info, styles.RollNo].join(" ")}>
-                    {/* <div>RollNo</div> */}
                     <div>{parameter.RollNo}</div>
                   </div>
                   <div className={[styles.info, styles.Gender].join(" ")}>
-                    {/* <div>Gender</div> */}
                     <div>{parameter.Gender}</div>
                   </div>
                   <div className={styles.badges}>
@@ -276,17 +311,22 @@ const Details = () => {
               </div>
               <div className={styles.generalSection}>
                 <div className={styles.generalWrapper}>{formSelection()}</div>
-                <button
-                  onClick={() => {
-                    submitHandle();
-                  }}
-                  className={styles.editButton}
-                >
-                  <div className={styles.buttonContent}></div>
-                </button>
+                {edit === "false" ? (
+                  <button
+                    onClick={() => {
+                      submitHandle();
+                    }}
+                    className={styles.editButton}
+                  >
+                    <div className={styles.buttonContent}></div>
+                  </button>
+                ) : (
+                  <div></div>
+                )}
               </div>
             </div>
           </div>
+          {displayWarning()}
         </div>
       </>
     );
