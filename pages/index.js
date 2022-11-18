@@ -76,5 +76,6 @@ export default function Home(props) {
     );
   }
 }
+
 // TODO: Learn To Implement jotai (global state manger) but no action
 // TODO: Learn To Implement zustand (another manager with actions) with actions and internal call functions !Accessble outside react and can be listened through eventlistener in external script

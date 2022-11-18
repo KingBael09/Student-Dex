@@ -13,12 +13,10 @@
 .heading {
   display: flex;
   align-items: center;
-  /* padding: 1rem; */
-  /* margin-bottom: 1rem; */
   position: sticky;
   top: 0;
   background-color: white;
-  /* background-color: rebeccapurple; */
+
   z-index: 94;
 
   height: 10vh;
@@ -124,6 +122,8 @@
 
 .generalSection {
   flex: 0.75;
+  position: relative;
+  /* padding-top: 2rem; */
 
   /* background-color: var(--slightWhite); */
   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
@@ -142,16 +142,120 @@
 .infoParams {
   display: flex;
   gap: 1rem;
-  font-size: 1.3rem;
   padding: 15px;
-  /* justify-content: center; */
+  font-family: var(--codeFont);
+  font-weight: 900;
   align-items: center;
 }
 
+.infoParams > :first-child {
+  font-size: 1.4rem;
+}
+
 .infoParams > :last-child {
-  background-color: var(--slightWhite);
+  background-color: var(--subZero);
   flex: 1;
   padding: 1.2rem 2rem;
   border-radius: 50px;
-  /* display: flex; */
+  font-size: 1.3rem;
+}
+
+.failError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: var(--offWhite);
+}
+
+.editButton {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border: 0;
+  background-color: var(--bgColor);
+
+  border-radius: 50%;
+  transition: all 0.2s ease;
+
+  height: 5rem;
+  width: 5rem;
+
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.editButton:active {
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 5px 10px, rgba(0, 0, 0, 0.23) 0px 3px 3px;
+}
+
+.editButton:hover {
+  background-color: var(--subButton);
+}
+
+.buttonContent {
+  content: url("../public/editButton.svg");
+  padding: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.select {
+  border: none;
+  /* padding: 1rem; */
+  /* margin-right: 1rem; */
+  /* appearance: none; */
+  text-align: center;
+}
+
+.input {
+  border: none;
+  background-color: var(--slightHue) !important;
+  outline: none;
+}
+
+.button {
+  border: 0;
+  background-color: var(--bgColor);
+
+  /* border-radius: 50%; */
+  transition: all 0.2s ease;
+  /* 
+
+  height: 5rem;
+  width: 5rem; */
+  padding: 2rem 3rem;
+  /* border-radius: 40px; */
+  overflow: hidden;
+  font-size: 1.2rem;
+  width: 10vw;
+  font-family: var(--codeFont);
+  font-weight: 900;
+
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.button:active {
+  box-shadow: none;
+}
+
+.button:hover {
+  background-color: var(--subButton);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.first {
+  border-radius: 40px 0 0 40px;
+}
+.second {
+  border-radius: 0 40px 40px 0;
 }

@@ -110,12 +110,14 @@
   transition: all 0.3s ease, width 0s;
   width: 0vw;
   user-select: none;
+  position: absolute;
+  /* bottom: 0; */
 }
 
 .navBody:is(:hover) + .blur {
-  position: absolute;
+  position: fixed;
   height: 100vh;
-  left: 0;
+  top: 0;
   width: 100vw;
   user-select: none;
   background: rgba(0, 0, 0, 0.1);
