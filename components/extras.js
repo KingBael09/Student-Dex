@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/Extras.module.css";
+import Link from "next/link";
 
 const Extras = (props) => {
   const [totalStudent, settotalStudent] = useState(0);
@@ -11,7 +12,7 @@ const Extras = (props) => {
     const noStudent = resData.total;
     settotalStudent(noStudent);
   };
-  let parameter = props.data;
+  const parameter = props.localData;
 
   const shiftData = () => {
     if (parameter === undefined) {
@@ -28,6 +29,30 @@ const Extras = (props) => {
     if (parameter.CSEM === undefined) {
       parameter.CSEM = "N/A";
     }
+    if (parameter.LMAO === undefined) {
+      parameter.LMAO = "Damn";
+    }
+    if (parameter.Address === undefined) {
+      parameter.Address = "Not Updated";
+    }
+    if (parameter.Category === undefined) {
+      parameter.Category = "N/A";
+    }
+    if (parameter.City === undefined) {
+      parameter.City = "N/A";
+    }
+    if (parameter.Nationality === undefined) {
+      parameter.Nationality = "N/A";
+    }
+    if (parameter.PhysicalHandicap === undefined) {
+      parameter.PhysicalHandicap = "N/A";
+    }
+    if (parameter.Religion === undefined) {
+      parameter.Religion = "N/A";
+    }
+    if (parameter.Attendance === undefined) {
+      parameter.Attendance = "N/A";
+    }
   };
 
   getTotalStudent();
@@ -42,15 +67,19 @@ const Extras = (props) => {
       </div>
 
       {parameter.CSEM === "N/A" ? (
-        <button className={[styles.cardContainer, styles.tempButton].join(" ")}>
-          <div className={styles.cardName}>
-            <div>Current</div> <div>Semister</div>
-          </div>
-          <span className={styles.colon}>:</span>
-          <div className={styles.cardValue}>
-            <span>{parameter.CSEM}</span>
-          </div>
-        </button>
+        <Link href={"/details"}>
+          <button
+            className={[styles.cardContainer, styles.tempButton].join(" ")}
+          >
+            <div className={styles.cardName}>
+              <div>Current</div> <div>Semister</div>
+            </div>
+            <span className={styles.colon}>:</span>
+            <div className={styles.cardValue}>
+              <span>{parameter.CSEM}</span>
+            </div>
+          </button>
+        </Link>
       ) : (
         <div className={styles.cardContainer}>
           <div className={styles.cardName}>
@@ -64,17 +93,21 @@ const Extras = (props) => {
       )}
 
       {parameter.CGPA === "N/A" ? (
-        <button
-          className={[styles.cardContainer, styles.alt, styles.tempButton].join(
-            " "
-          )}
-        >
-          <div className={styles.cardName}>CGPA</div>
-          <span className={styles.colon}>:</span>
-          <div className={styles.cardValue}>
-            <span>{parameter.CGPA}</span>
-          </div>
-        </button>
+        <Link href={'/details'}>
+          <button
+            className={[
+              styles.cardContainer,
+              styles.alt,
+              styles.tempButton,
+            ].join(" ")}
+          >
+            <div className={styles.cardName}>CGPA</div>
+            <span className={styles.colon}>:</span>
+            <div className={styles.cardValue}>
+              <span>{parameter.CGPA}</span>
+            </div>
+          </button>
+        </Link>
       ) : (
         <div className={[styles.cardContainer, styles.alt].join(" ")}>
           <div className={styles.cardName}>CGPA</div>

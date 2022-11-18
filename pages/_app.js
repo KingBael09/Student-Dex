@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import { UserData } from "../context/userState";
-// import { DataDesign } from "../Context/dataHolder";
+import { SessionData } from "../Context/dataHolder";
 import { useRouter } from "next/router";
 import Pannel from "../components/pannel";
 
@@ -15,7 +15,9 @@ function MyApp({ Component, pageProps }) {
     return (
       <>
         <UserData>
-          <Component {...pageProps} />
+          <SessionData>
+            <Component {...pageProps} />
+          </SessionData>
         </UserData>
       </>
     );
@@ -23,8 +25,10 @@ function MyApp({ Component, pageProps }) {
     return (
       <>
         <UserData>
-          <Pannel />
-          <Component {...pageProps} />
+          <SessionData>
+            <Pannel />
+            <Component {...pageProps} />
+          </SessionData>
         </UserData>
       </>
     );

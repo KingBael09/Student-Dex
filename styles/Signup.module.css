@@ -27,7 +27,7 @@
   margin-left: 2rem;
   font-family: "Jetbrains Mono";
   font-weight: 900;
-  color: #190075;
+  color: var(--uniqueState);
 }
 
 .innerform {

@@ -8,12 +8,15 @@ import { useUserInfo } from "../context/userState";
 import Login from "../components/login";
 import Extras from "../components/extras";
 import React, { useEffect, useState } from "react";
+import { useUserData } from "../Context/dataHolder";
 
 // ? Done TODO: Add blur on navbar Hover
 
 export default function Home(props) {
   const [session, setsession] = useUserInfo();
   const [info, setinfo] = useState();
+
+  const [logged, setLogged] = useUserData();
 
   const dataService = async () => {
     let ImportedData = await fetch("http://localhost:3000/api/userInfo", {
@@ -26,6 +29,7 @@ export default function Home(props) {
     let data = await ImportedData.json();
     let finaldata = data;
     setinfo(finaldata);
+    setLogged(finaldata);
   };
 
   //? useEffect is Kinda Fucked Up as of Now!
@@ -63,7 +67,7 @@ export default function Home(props) {
                 <Info data={info} />
               </div>
               <div className={[styles.extras, styles.dash].join(" ")}>
-                <Extras data={info} />
+                <Extras localData={logged} />
               </div>
             </div>
           </main>
@@ -72,3 +76,5 @@ export default function Home(props) {
     );
   }
 }
+// TODO: Learn To Implement jotai (global state manger) but no action
+// TODO: Learn To Implement zustand (another manager with actions) with actions and internal call functions !Accessble outside react and can be listened through eventlistener in external script

@@ -3,7 +3,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 const Context = createContext();
 
 export function UserData({ children }) {
-  let getItem = {};
   const [session, setsession] = useState("waiting");
 
   // useEffect(() => {
