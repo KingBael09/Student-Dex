@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/Carousel.module.css";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { useUserData } from "../Context/dataHolder";
 
 const Carouesl = () => {
   const [choice, setchoice] = useState("first");
-  const attCount = 75;
+  const [Logged, setLogged] = useUserData();
+  const [attCount, setattCount] = useState(0);
+
+  useEffect(() => {
+    if (Logged.Attendance != "N/A") {
+      setattCount(Logged.Attendance);
+    }
+  }, [Logged]);
 
   const generateObj = () => {
     let present = `<div class=${styles.pointRed}></div>`;

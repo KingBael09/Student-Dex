@@ -66,7 +66,7 @@ const Extras = (props) => {
         </div>
       </div>
 
-      {parameter.CSEM === "N/A" ? (
+      {parameter.CSEM === "N/A" || parameter.CSEM === "" ? (
         <Link href={"/details"}>
           <button
             className={[styles.cardContainer, styles.tempButton].join(" ")}
@@ -76,7 +76,7 @@ const Extras = (props) => {
             </div>
             <span className={styles.colon}>:</span>
             <div className={styles.cardValue}>
-              <span>{parameter.CSEM}</span>
+              <span>{"N/A"}</span>
             </div>
           </button>
         </Link>
@@ -92,8 +92,8 @@ const Extras = (props) => {
         </div>
       )}
 
-      {parameter.CGPA === "N/A" ? (
-        <Link href={'/details'}>
+      {parameter.CGPA === "N/A" || parameter.CGPA === "" ? (
+        <Link href={"/details"}>
           <button
             className={[
               styles.cardContainer,
@@ -104,7 +104,7 @@ const Extras = (props) => {
             <div className={styles.cardName}>CGPA</div>
             <span className={styles.colon}>:</span>
             <div className={styles.cardValue}>
-              <span>{parameter.CGPA}</span>
+              <span>{"N/A"}</span>
             </div>
           </button>
         </Link>

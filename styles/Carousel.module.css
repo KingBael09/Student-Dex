@@ -75,11 +75,9 @@
   background-color: red;
   position: absolute;
   left: 50%;
-
   height: 2rem;
   width: 2rem;
   padding: 10px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -87,11 +85,11 @@
 }
 
 .pointRed {
-  background-color: var(--ultraDeep);
+  background-color: var(--ultraState);
 }
 
 .pointBlack {
-  background-color: var(--ultraState);
+  background-color: var(--ultraDeep);
 }
 
 .content > div {

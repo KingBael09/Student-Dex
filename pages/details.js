@@ -8,14 +8,86 @@ import { AiOutlineUser, AiFillEdit } from "react-icons/ai";
 import Router from "next/router";
 
 const Details = () => {
+  const attendanceEditabel = true;
+
   const [session, setsession] = useUserInfo();
   const [Logged, setLogged] = useUserData();
   const [edit, setedit] = useState("false");
   const [warning, setWarning] = useState("false");
   const parameter = Logged;
 
+  const [Category, setCategory] = useState(
+    parameter.Category === "N/A" ? "" : parameter.Category
+  );
+  const [City, setCity] = useState(
+    parameter.City === "N/A" ? "" : parameter.City
+  );
+  const [Nationality, setNationality] = useState(
+    parameter.Nationality === "N/A" ? "" : parameter.Nationality
+  );
+  const [PhysicalHandicap, setPhysicalHandicap] = useState(
+    parameter.PhysicalHandicap === "N/A" ? "" : parameter.PhysicalHandicap
+  );
+  const [Religion, setReligion] = useState(
+    parameter.Religion === "N/A" ? "" : parameter.Religion
+  );
+  const [Address, setAddress] = useState(
+    parameter.Address === "Not Updated" ? "" : parameter.Address
+  );
+
+  const [CSEM, setCSEM] = useState(
+    parameter.CSEM === "N/A" ? "" : parameter.CSEM
+  );
+  const [CGPA, setCGPA] = useState(
+    parameter.CGPA === "N/A" ? "" : parameter.CGPA
+  );
+  const [Attendance, setAttendance] = useState(
+    parameter.Attendance === "N/A" ? "" : parameter.Attendance
+  );
+
+  const postData = async (e) => {
+    console.log(e);
+    let waitData = await fetch("http://localhost:3000/api/updateData", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(e),
+    });
+
+    let resData = await waitData.json();
+    if (resData.status === "OK") {
+      alert("Your Response has beed Recorded");
+    }
+  };
+
   const postReq = () => {
-    console.log("Request Must be Post");
+    console.log("Request For Post has been Made");
+    const sentData = {
+      id: Logged.RollNo,
+      Category: Category,
+      City: City,
+      Nationality: Nationality,
+      PhysicalHandicap: PhysicalHandicap,
+      Religion: Religion,
+      Address: Address,
+      Attendance: Attendance,
+      CGPA: CGPA,
+      CSEM: CSEM,
+    };
+
+    postData(sentData);
+
+    // Locally Updating Stuff
+    parameter.Category = Category;
+    parameter.City = City;
+    parameter.Nationality = Nationality;
+    parameter.PhysicalHandicap = PhysicalHandicap;
+    parameter.Religion = Religion;
+    parameter.Address = Address;
+    parameter.Attendance = Attendance;
+    parameter.CGPA = CGPA;
+    parameter.CSEM = CSEM;
   };
 
   const displayWarning = () => {
@@ -94,7 +166,7 @@ const Details = () => {
             <div>Category</div>
             <span>:</span>
             <div>
-              {parameter.Category === "N/A" ? (
+              {parameter.Category === "N/A" || parameter.Category === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Category
@@ -105,7 +177,7 @@ const Details = () => {
             <div>City</div>
             <span>:</span>
             <div>
-              {parameter.City === "N/A" ? (
+              {parameter.City === "N/A" || parameter.City === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.City
@@ -116,7 +188,8 @@ const Details = () => {
             <div>Nationality</div>
             <span>:</span>
             <div>
-              {parameter.Nationality === "N/A" ? (
+              {parameter.Nationality === "N/A" ||
+              parameter.Nationality === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Nationality
@@ -126,13 +199,20 @@ const Details = () => {
           <div className={styles.infoParams}>
             <div>Handicap</div>
             <span>:</span>
-            <div>{parameter.PhysicalHandicap}</div>
+            <div>
+              {parameter.PhysicalHandicap === "N/A" ||
+              parameter.PhysicalHandicap === "" ? (
+                <div className={styles.failError}>Not Available</div>
+              ) : (
+                parameter.PhysicalHandicap
+              )}
+            </div>
           </div>
           <div className={styles.infoParams}>
             <div>Religion</div>
             <span>:</span>
             <div>
-              {parameter.Religion === "N/A" ? (
+              {parameter.Religion === "N/A" || parameter.Religion === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Religion
@@ -143,7 +223,8 @@ const Details = () => {
             <div>Address</div>
             <span>:</span>
             <div className={styles.address}>
-              {parameter.Address === "Not Updated" ? (
+              {parameter.Address === "Not Updated" ||
+              parameter.Address === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Address
@@ -155,10 +236,10 @@ const Details = () => {
             <div>Attendance</div>
             <span>:</span>
             <div>
-              {parameter.Attendance === "N/A" ? (
+              {parameter.Attendance === "N/A" || parameter.Attendance === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
-                parameter.Attendance
+                parameter.Attendance + "%"
               )}
             </div>
           </div>
@@ -191,13 +272,14 @@ const Details = () => {
             <div>Category</div>
             <span>:</span>
             <select
-              name="branch"
+              name="category"
               className={[styles.input, styles.select].join(" ")}
-              // value={Branch}
-              // onChange={(event) => setBranch(event.target.value)}
-              // value={Branch}
+              onChange={(event) => {
+                setCategory(event.target.value);
+              }}
+              value={Category}
             >
-              <option value={"NA"} selected disabled hidden>
+              <option value={""} disabled hidden>
                 ------------------------------Select------------------------------
               </option>
               <option value={"Open"}>Open</option>
@@ -209,40 +291,147 @@ const Details = () => {
           <div className={styles.infoParams}>
             <div>City</div>
             <span>:</span>
-            <input className={styles.input} type="text" />
+            <input
+              value={City}
+              required
+              onChange={(e) => {
+                setCity(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+            />
           </div>
           <div className={styles.infoParams}>
             <div>Nationality</div>
             <span>:</span>
-            <input className={styles.input} type="text" />
+            {/* <input
+              value={Nationality}
+              onChange={(e) => {
+                setNationality(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+            /> */}
+            <select
+              name="Nationality"
+              className={[styles.input, styles.select].join(" ")}
+              onChange={(event) => {
+                setNationality(event.target.value);
+              }}
+              value={Nationality}
+            >
+              <option value={""} disabled hidden>
+                ------------------------------Select------------------------------
+              </option>
+              <option value={"Indian"}>Indian</option>
+              <option value={"Other"}>Other</option>
+            </select>
           </div>
           <div className={styles.infoParams}>
             <div>Handicap</div>
             <span>:</span>
-            <input className={styles.input} type="text" />
+            <select
+              name="PhysicalHandicap"
+              className={[styles.input, styles.select].join(" ")}
+              onChange={(event) => {
+                setPhysicalHandicap(event.target.value);
+              }}
+              value={PhysicalHandicap}
+            >
+              <option value={""} disabled hidden>
+                ------------------------------Select------------------------------
+              </option>
+              <option value={"Yes"}>Yes</option>
+              <option value={"No"}>No</option>
+            </select>
           </div>
           <div className={styles.infoParams}>
             <div>Religion</div>
             <span>:</span>
-            <input className={styles.input} type="text" />
+            <input
+              value={Religion}
+              onChange={(e) => {
+                setReligion(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+            />
           </div>
+
           <div className={styles.infoParams}>
             <div>Address</div>
             <span>:</span>
-            <input className={styles.input} type="text" />
+            <input
+              value={Address}
+              onChange={(e) => {
+                setAddress(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+            />
+          </div>
+          <div className={styles.infoParams}>
+            <div>CGPA</div>
+            <span>:</span>
+            <input
+              value={CGPA}
+              onChange={(e) => {
+                setCGPA(e.target.value);
+              }}
+              className={styles.input}
+              type="text"
+            />
+          </div>
+          <div className={styles.infoParams}>
+            <div>Current Semester</div>
+            <span>:</span>
+            <select
+              name="CSEM"
+              className={[styles.input, styles.select].join(" ")}
+              onChange={(event) => {
+                setCSEM(event.target.value);
+              }}
+              value={CSEM}
+            >
+              <option value={""} disabled hidden>
+                ------------------------------Select------------------------------
+              </option>
+              <option value={"I"}>I</option>
+              <option value={"II"}>II</option>
+              <option value={"III"}>III</option>
+              <option value={"IV"}>IV</option>
+              <option value={"V"}>V</option>
+              <option value={"VI"}>VI</option>
+              <option value={"VII"}>VII</option>
+              <option value={"VIII"}>VIII</option>
+            </select>
           </div>
 
           <div className={styles.infoParams}>
             <div>Attendance</div>
             <span>:</span>
-            <div>
-              {parameter.Attendance === "N/A" ? (
-                <div className={styles.failError}>Not Available</div>
-              ) : (
-                parameter.Attendance
-              )}
-            </div>
+            {attendanceEditabel === true ? (
+              <input
+                value={Attendance}
+                onChange={(e) => {
+                  setAttendance(e.target.value);
+                }}
+                pattern="[0-9]"
+                required
+                className={styles.input}
+                type="text"
+              />
+            ) : (
+              <div>
+                {parameter.Attendance === "N/A" ? (
+                  <div className={styles.failError}>Not Editable</div>
+                ) : (
+                  parameter.Attendance + "%"
+                )}
+              </div>
+            )}
           </div>
+
           <div className={styles.buttonContainer}>
             <button
               onClick={() => {
@@ -304,8 +493,12 @@ const Details = () => {
                   </div>
                   <div className={styles.badges}>
                     <div className={styles.branchBlock}>{parameter.Branch}</div>
-                    <div className={styles.cgpaBlock}>{parameter.CGPA}</div>
-                    <div className={styles.csemBlock}>{parameter.CSEM}</div>
+                    <div className={styles.cgpaBlock}>
+                      {parameter.CGPA === "" ? "N/A" : parameter.CGPA}
+                    </div>
+                    <div className={styles.csemBlock}>
+                      {parameter.CSEM === "" ? "N/A" : parameter.CSEM}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -334,3 +527,6 @@ const Details = () => {
 };
 
 export default Details;
+
+{
+}
