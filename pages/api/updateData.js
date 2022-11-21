@@ -3,21 +3,32 @@ import * as fs from "fs";
 export default async function handler(req, res) {
   if (req.method === "POST") {
     // considering Folder and User already Exist
-    // req containing
-    // LoginId, Catergory, Nationality, PhysicalHandicap, City, Religion, Address
+    // req containing => LoginId, Catergory, Nationality, PhysicalHandicap, City, Religion, Address
+
     const availFile = `Database/Users/${req.body.id}.json`;
     if (fs.existsSync(availFile)) {
       const input = req.body;
       const data = fs.readFileSync(availFile);
 
       const userData = JSON.parse(data);
-      userData.Category = input.Category;
-      userData.Nationality = input.Nationality;
-      userData.PhysicalHandicap = input.PhysicalHandicap;
-      userData.City = input.City;
-      userData.Religion = input.Religion;
-      userData.Address = input.Address;
-      console.log(typeof input.Attendance);
+      if (input.Category != undefined || input.Category != "") {
+        userData.Category = input.Category;
+      }
+      if (input.Nationality != undefined || input.Nationality != "") {
+        userData.Nationality = input.Nationality;
+      }
+      if (input.PhysicalHandicap != undefined || input.PhysicalHandicap != "") {
+        userData.PhysicalHandicap = input.PhysicalHandicap;
+      }
+      if (input.City != undefined || input.City != "") {
+        userData.City = input.City;
+      }
+      if (input.Religion != undefined || input.Religion != "") {
+        userData.Religion = input.Religion;
+      }
+      if (input.Address != undefined || input.Address != "") {
+        userData.Address = input.Address;
+      }
       if (input.Attendance != undefined || input.Attendance != "") {
         userData.Attendance = input.Attendance;
       }
@@ -40,3 +51,5 @@ export default async function handler(req, res) {
     res.status(200).json({ status: "Bad Request" });
   }
 }
+
+// TODO: In Future Convert this to Switch Statement

@@ -15,6 +15,7 @@ import { useUserData } from "../Context/dataHolder";
 export default function Home(props) {
   const [session, setsession] = useUserInfo();
   const [info, setinfo] = useState();
+  // console.log(session);
 
   const [logged, setLogged] = useUserData();
 
@@ -32,9 +33,40 @@ export default function Home(props) {
     setLogged(finaldata);
   };
 
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
+  const secondServ = async () => {
+    // ?DUMB Logic
+
+    const RollNo = await session.id;
+    const Password = await session.Pass;
+    console.log(RollNo + " " + Password);
+    // const totCount = await fetch("http://127.0.0.1:1000/countusers");
+    // const resDemo = await totCount.json();
+    // console.log(resDemo);
+
+    if (RollNo != undefined) {
+      let stuData = await fetch(
+        "http://127.0.0.1:1000/getAuthenticateStudent",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ RollNo: RollNo, Password: Password }),
+        }
+      );
+      let secData = await stuData.json();
+      console.log(secData);
+      console.log(secData.Branch);
+    }
+    // console.log(totCount);
+  };
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
+
   //? useEffect is Kinda Fucked Up as of Now!
   useEffect(() => {
     dataService();
+    secondServ();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
 
@@ -45,6 +77,7 @@ export default function Home(props) {
   }
   // !Before This is Fucked Up Logic
   else {
+    // secondServ();
     return (
       <>
         <Head>

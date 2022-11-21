@@ -209,7 +209,11 @@
 
 .select {
   border: none;
-  text-align: center;
+  outline: none;
+  /* appearance: none; */
+  /* text-align: center; */
+  /* padding: 2rem; */
+  cursor: pointer;
 }
 
 .input {

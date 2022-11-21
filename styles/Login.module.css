@@ -159,6 +159,7 @@
   position: absolute;
   content: " ?";
   font-size: 90px;
+  font-family: "Roboto";
   color: var(--state);
   transform: translateY(10%);
 }

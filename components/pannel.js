@@ -40,9 +40,11 @@ const Pannel = () => {
             <div className={styles.linkName}>Student</div>
           </div>
           <div className={styles.pList}>
-            <div className={styles.listItem}>
-              <span>Course Registration</span>
-            </div>
+            <Link href={"/register"}>
+              <div className={styles.listItem}>
+                <span>Course Registration</span>
+              </div>
+            </Link>
             <Link href={"/details"}>
               <div className={styles.listItem}>
                 <span>Student Details</span>
@@ -61,9 +63,11 @@ const Pannel = () => {
             <div className={styles.linkName}>Academics</div>
           </div>
           <div className={styles.pList}>
-            <div className={styles.listItem}>
-              <span>CGPA</span>
-            </div>
+            <Link href={"/CGPA"}>
+              <div className={styles.listItem}>
+                <span>CGPA</span>
+              </div>
+            </Link>
             <div className={styles.listItem}>
               <span>Notes</span>
             </div>

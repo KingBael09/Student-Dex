@@ -7,8 +7,11 @@ const Info = (props) => {
   const info = props.data;
 
   if (info === undefined) {
-    console.error("Internal Error 500 : Problem Fetching Data");
-    return <div>LMAO</div>;
+    return (
+      <div className={styles.loading}>
+        <span className={styles.loadingAnimation}></span>{" "}
+      </div>
+    );
   } else {
     return (
       <div className={styles.container}>
