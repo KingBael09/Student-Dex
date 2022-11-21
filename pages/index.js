@@ -15,7 +15,8 @@ import { useUserData } from "../Context/dataHolder";
 export default function Home(props) {
   const [session, setsession] = useUserInfo();
   const [info, setinfo] = useState();
-  // console.log(session);
+
+  const [infoTemp, setinfoTemp] = useState();
 
   const [logged, setLogged] = useUserData();
 
@@ -34,15 +35,15 @@ export default function Home(props) {
   };
 
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
-  const secondServ = async () => {
-    // ?DUMB Logic
+  const setData = (e) => {
+    setinfoTemp(e);
+    // console.log(e);
+  };
 
-    const RollNo = await session.id;
-    const Password = await session.Pass;
-    console.log(RollNo + " " + Password);
-    // const totCount = await fetch("http://127.0.0.1:1000/countusers");
-    // const resDemo = await totCount.json();
-    // console.log(resDemo);
+  const secondServ = async () => {
+    const RollNo = await session.RollNo;
+    const Password = await session.Password;
+    // console.log(RollNo + " " + Password);
 
     if (RollNo != undefined) {
       let stuData = await fetch(
@@ -56,16 +57,15 @@ export default function Home(props) {
         }
       );
       let secData = await stuData.json();
-      console.log(secData);
-      console.log(secData.Branch);
+      setData(secData);
+      setLogged(secData)
     }
-    // console.log(totCount);
   };
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
 
   //? useEffect is Kinda Fucked Up as of Now!
   useEffect(() => {
-    dataService();
+    // dataService();
     secondServ();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
@@ -77,7 +77,8 @@ export default function Home(props) {
   }
   // !Before This is Fucked Up Logic
   else {
-    // secondServ();
+    // console.log(logged)
+    // console.log(session);
     return (
       <>
         <Head>
@@ -97,10 +98,10 @@ export default function Home(props) {
             </div>
             <div className={styles.wrap}>
               <div className={[styles.major, styles.dash].join(" ")}>
-                <Info data={info} />
+                <Info data={info} temp={infoTemp} />
               </div>
               <div className={[styles.extras, styles.dash].join(" ")}>
-                <Extras localData={logged} />
+                <Extras localData={logged} data={infoTemp} />
               </div>
             </div>
           </main>

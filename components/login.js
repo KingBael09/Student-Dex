@@ -24,35 +24,39 @@ const Login = (props) => {
   // !Experemental Code BELOW
 
   const handleSubmit = (e) => {
-    const info = { id: id, Pass: pass };
+    const info = { RollNo: id, Password: pass };
     callbackSet(info);
     e.preventDefault();
   };
 
   const callbackSet = (e) => {
-    // if (typeof window != "undefined") {
-    //   sessionStorage.setItem("user", e.id);
-    //   sessionStorage.setItem("pass", e.Pass);
-    // }
-
     callSessionValidator(e);
   };
 
   const callSessionValidator = async (e) => {
-    let sentData = await fetch("http://localhost:3000/api/userSession", {
+    // let sentData = await fetch("http://localhost:3000/api/userSession", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(e),
+    // });
+
+    // let resData = await sentData.json();
+    // console.log(resData);
+
+    let stuData = await fetch("http://127.0.0.1:1000/getAuthenticateStudent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(e),
     });
+    let secData = await stuData.json();
 
-    let resData = await sentData.json();
-    // console.log(resData);
-
-    if (resData.status == "Invalid") {
+    if (secData.status == "Invalid") {
       alert("Invalid Password");
-    } else if (resData.status == "Unavailable") {
+    } else if (secData.status == "Unavailable") {
       alert("User Not Found");
     } else {
       setsome(e);

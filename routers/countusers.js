@@ -11,7 +11,6 @@ router.get("/countusers", async (req, res) => {
   var c = count + count2;
 
   res.json({ totalCount: c });
-  console.log(c)
 });
 
 module.exports = router;

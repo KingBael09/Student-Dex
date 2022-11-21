@@ -25,10 +25,9 @@ router.post("/createstudent", async (req, res) => {
         flag: "false",
       });
       const falsecourse = await schema.save();
-      res.status(201).send("true");
-      console.log("data saved sucessfully...");
+      res.status(201).json({ status: "Successfull" });
     } else {
-      res.send("false");
+      res.json({ status: "Exists" });
     }
   } catch (e) {
     res.status(400).send(e);

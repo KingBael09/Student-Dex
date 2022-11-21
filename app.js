@@ -2,7 +2,7 @@ const express = require("express");
 
 var cors = require("cors");
 const app = express();
-// req,
+
 require("./connection/conn");
 const Student = require("./modelsdb/schemastudent");
 const courseregister = require("./routers/registerstudent");

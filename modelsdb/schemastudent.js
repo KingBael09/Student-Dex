@@ -9,37 +9,67 @@ const studentSchema = new mongoose.Schema({
   },
   LastName: {
     type: String,
-    required: true,
+
     minlength: 3,
   },
   Gender: {
-    required: true,
     type: String,
   },
   DOB: {
     type: String,
-    required: true,
   },
   YearOfAddmission: {
-    required: true,
     type: String,
   },
   Mobile: {
     type: Number,
-    required: true,
+
     min: 10,
   },
   Branch: {
     type: String,
-    required: true,
   },
   RollNo: {
     type: String,
-    required: true,
   },
   Password: {
     type: String,
-    required: true,
+  },
+  Nationality: {
+    type: String,
+    default: "",
+  },
+  Mail: {
+    type: String,
+    default: "",
+  },
+  City: {
+    type: String,
+    default: "",
+  },
+  Attendence: {
+    type: String,
+    default: "",
+  },
+  PhysicallyHandicap: {
+    type: String,
+    default: "",
+  },
+  Religion: {
+    type: String,
+    default: "",
+  },
+  Address: {
+    type: String,
+    default: "",
+  },
+  CGPA: {
+    type: String,
+    default: "",
+  },
+  CSEM: {
+    type: String,
+    default: "",
   },
 });
 

@@ -3,11 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev & nodemon app.js",
+    "dev": "next dev",
     "build": "next build",
-    "start": "next start & nodemon app.js",
+    "start": "next start",
     "lint": "next lint",
-    "export": "next build && next export"
+    "export": "next build && next export",
+    "server": "node app.js",
+    "devServer": "nodemon app.js",
+    "s": "concurrently -n \"Next,Node\" -c \"bgRed.bold,bgBlack.bold\" \"yarn dev\" \"yarn devServer\"",
+    "bd": "next build && concurrently \"yarn start\" \"yarn server\" "
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",
@@ -26,6 +30,7 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
+    "concurrently": "^7.6.0",
     "eslint": "8.25.0",
     "eslint-config-next": "12.3.1"
   }

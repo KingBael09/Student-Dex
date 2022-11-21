@@ -32,7 +32,8 @@
 .cardName {
   display: flex;
   flex-direction: column;
-  font-size: 19px;
+  font-size: 22px;
+  font-family: var(--codeFont);
 }
 
 .cardValue {
@@ -56,14 +57,55 @@
   border: 0;
   padding: 0;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  
 }
 
 .tempButton:active {
-  box-shadow: none !important;
+  box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.589) !important;
 }
 
 .tempButton:hover {
   box-shadow: rgba(60, 64, 67, 0.5) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.3) 0px 2px 6px 2px;
+    rgba(60, 64, 67, 0.3) 0px 2px 6px 2px,;
+  background-color: var(--validInput);
+  transition: all 0.2s ease-in-out;
+  /* border: 0.1px solid black; */
+  /* outline: 0.1px solid black; */
+
+}
+
+.loading {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  /* font-size: 30px;
+  font-family: var(--codeFont);
+  font-weight: 900; */
+  width: 100%;
+  height: 100%;
+}
+
+.loadingAnimation {
+  border: 20px solid var(--subZero);
+  border-top: 20px solid var(--bgColor);
+
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.colon{
+  font-size: 1rem;
+  font-family: var(--codeFont);
 }

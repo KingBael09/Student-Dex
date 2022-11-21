@@ -29,6 +29,7 @@
 .heading > :last-child {
   margin-left: auto;
   margin-right: 2rem;
+  /* color: black; */
 }
 
 .badges {
@@ -137,7 +138,7 @@
 }
 
 .infoParams > :first-child {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 
 .infoParams > :last-child {
@@ -210,16 +211,16 @@
 .select {
   border: none;
   outline: none;
-  /* appearance: none; */
-  /* text-align: center; */
-  /* padding: 2rem; */
   cursor: pointer;
+  /* font-family: "Roboto"; */
 }
 
 .input {
   border: none;
   background-color: var(--slightHue) !important;
   outline: none;
+  font-family: var(--codeFont);
+  font-weight: 750;
 }
 
 .button {

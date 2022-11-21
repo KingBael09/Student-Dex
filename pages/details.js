@@ -19,31 +19,17 @@ const Details = () => {
   const [Category, setCategory] = useState(
     parameter.Category === "N/A" ? "" : parameter.Category
   );
-  const [City, setCity] = useState(
-    parameter.City === "N/A" ? "" : parameter.City
+  //! Needs Update
+  const [City, setCity] = useState(parameter.City);
+  const [Nationality, setNationality] = useState(parameter.Nationality);
+  const [PhysicallyHandicap, setPhysicallyHandicap] = useState(
+    parameter.PhysicallyHandicap
   );
-  const [Nationality, setNationality] = useState(
-    parameter.Nationality === "N/A" ? "" : parameter.Nationality
-  );
-  const [PhysicalHandicap, setPhysicalHandicap] = useState(
-    parameter.PhysicalHandicap === "N/A" ? "" : parameter.PhysicalHandicap
-  );
-  const [Religion, setReligion] = useState(
-    parameter.Religion === "N/A" ? "" : parameter.Religion
-  );
-  const [Address, setAddress] = useState(
-    parameter.Address === "Not Updated" ? "" : parameter.Address
-  );
-
-  const [CSEM, setCSEM] = useState(
-    parameter.CSEM === "N/A" ? "" : parameter.CSEM
-  );
-  const [CGPA, setCGPA] = useState(
-    parameter.CGPA === "N/A" ? "" : parameter.CGPA
-  );
-  const [Attendance, setAttendance] = useState(
-    parameter.Attendance === "N/A" ? "" : parameter.Attendance
-  );
+  const [Religion, setReligion] = useState(parameter.Religion);
+  const [Address, setAddress] = useState(parameter.Address);
+  const [CSEM, setCSEM] = useState(parameter.CSEM);
+  const [CGPA, setCGPA] = useState(parameter.CGPA);
+  const [Attendance, setAttendance] = useState(parameter.Attendance);
 
   const postData = async (e) => {
     console.log(e);
@@ -60,6 +46,7 @@ const Details = () => {
       alert("Your Response has beed Recorded");
     }
   };
+  console.log(Logged);
 
   const postReq = () => {
     console.log("Request For Post has been Made");
@@ -68,7 +55,7 @@ const Details = () => {
       Category: Category,
       City: City,
       Nationality: Nationality,
-      PhysicalHandicap: PhysicalHandicap,
+      PhysicallyHandicap: PhysicallyHandicap,
       Religion: Religion,
       Address: Address,
       Attendance: Attendance,
@@ -82,7 +69,7 @@ const Details = () => {
     parameter.Category = Category;
     parameter.City = City;
     parameter.Nationality = Nationality;
-    parameter.PhysicalHandicap = PhysicalHandicap;
+    parameter.PhysicallyHandicap = PhysicallyHandicap;
     parameter.Religion = Religion;
     parameter.Address = Address;
     parameter.Attendance = Attendance;
@@ -155,18 +142,18 @@ const Details = () => {
           <div className={styles.infoParams}>
             <div>Phone</div>
             <span>:</span>
-            <div>{parameter.Phone}</div>
+            <div>{parameter.Mobile}</div>
           </div>
           <div className={styles.infoParams}>
             <div>Admission Date</div>
             <span>:</span>
-            <div>{parameter.AdmissionData}</div>
+            <div>{parameter.YearOfAddmission}</div>
           </div>
           <div className={styles.infoParams}>
             <div>Category</div>
             <span>:</span>
             <div>
-              {parameter.Category === "N/A" || parameter.Category === "" ? (
+              {parameter.Category === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Category
@@ -177,7 +164,7 @@ const Details = () => {
             <div>City</div>
             <span>:</span>
             <div>
-              {parameter.City === "N/A" || parameter.City === "" ? (
+              {parameter.City === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.City
@@ -188,8 +175,7 @@ const Details = () => {
             <div>Nationality</div>
             <span>:</span>
             <div>
-              {parameter.Nationality === "N/A" ||
-              parameter.Nationality === "" ? (
+              {parameter.Nationality === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Nationality
@@ -200,11 +186,10 @@ const Details = () => {
             <div>Handicap</div>
             <span>:</span>
             <div>
-              {parameter.PhysicalHandicap === "N/A" ||
-              parameter.PhysicalHandicap === "" ? (
+              {parameter.PhysicallyHandicap === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
-                parameter.PhysicalHandicap
+                parameter.PhysicallyHandicap
               )}
             </div>
           </div>
@@ -212,7 +197,7 @@ const Details = () => {
             <div>Religion</div>
             <span>:</span>
             <div>
-              {parameter.Religion === "N/A" || parameter.Religion === "" ? (
+              {parameter.Religion === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Religion
@@ -223,8 +208,7 @@ const Details = () => {
             <div>Address</div>
             <span>:</span>
             <div className={styles.address}>
-              {parameter.Address === "Not Updated" ||
-              parameter.Address === "" ? (
+              {parameter.Address === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
                 parameter.Address
@@ -236,10 +220,10 @@ const Details = () => {
             <div>Attendance</div>
             <span>:</span>
             <div>
-              {parameter.Attendance === "N/A" || parameter.Attendance === "" ? (
+              {parameter.Attendence === "" ? (
                 <div className={styles.failError}>Not Available</div>
               ) : (
-                parameter.Attendance + "%"
+                parameter.Attendence + "%"
               )}
             </div>
           </div>
@@ -261,12 +245,12 @@ const Details = () => {
           <div className={styles.infoParams}>
             <div>Phone</div>
             <span>:</span>
-            <div>{parameter.Phone}</div>
+            <div>{parameter.Mobile}</div>
           </div>
           <div className={styles.infoParams}>
             <div>Admission Date</div>
             <span>:</span>
-            <div>{parameter.AdmissionData}</div>
+            <div>{parameter.YearOfAddmission}</div>
           </div>
           <div className={styles.infoParams}>
             <div>Category</div>
@@ -280,7 +264,7 @@ const Details = () => {
               value={Category}
             >
               <option value={""} disabled hidden>
-                ------------------------------Select------------------------------
+                ----------------------------Select----------------------------
               </option>
               <option value={"Open"}>Open</option>
               <option value={"SC"}>SC</option>
@@ -304,14 +288,6 @@ const Details = () => {
           <div className={styles.infoParams}>
             <div>Nationality</div>
             <span>:</span>
-            {/* <input
-              value={Nationality}
-              onChange={(e) => {
-                setNationality(e.target.value);
-              }}
-              className={styles.input}
-              type="text"
-            /> */}
             <select
               name="Nationality"
               className={[styles.input, styles.select].join(" ")}
@@ -321,7 +297,7 @@ const Details = () => {
               value={Nationality}
             >
               <option value={""} disabled hidden>
-                ------------------------------Select------------------------------
+                ----------------------------Select----------------------------
               </option>
               <option value={"Indian"}>Indian</option>
               <option value={"Other"}>Other</option>
@@ -331,15 +307,15 @@ const Details = () => {
             <div>Handicap</div>
             <span>:</span>
             <select
-              name="PhysicalHandicap"
+              name="PhysicallyHandicap"
               className={[styles.input, styles.select].join(" ")}
               onChange={(event) => {
-                setPhysicalHandicap(event.target.value);
+                setPhysicallyHandicap(event.target.value);
               }}
-              value={PhysicalHandicap}
+              value={PhysicallyHandicap}
             >
               <option value={""} disabled hidden>
-                ------------------------------Select------------------------------
+                ----------------------------Select----------------------------
               </option>
               <option value={"Yes"}>Yes</option>
               <option value={"No"}>No</option>
@@ -394,16 +370,16 @@ const Details = () => {
               value={CSEM}
             >
               <option value={""} disabled hidden>
-                ------------------------------Select------------------------------
+                ----------------------------Select----------------------------
               </option>
-              <option value={"I"}>I</option>
-              <option value={"II"}>II</option>
-              <option value={"III"}>III</option>
-              <option value={"IV"}>IV</option>
-              <option value={"V"}>V</option>
-              <option value={"VI"}>VI</option>
-              <option value={"VII"}>VII</option>
-              <option value={"VIII"}>VIII</option>
+              <option value="I">I&#x02E2;&#x1D57; Semester</option>
+              <option value="II">II&#x207F;&#x1D48; Semester</option>
+              <option value="III">III&#x02B3;&#x1D48; Semester</option>
+              <option value="IV">IV&#x1D57;&#x02B0; Semester</option>
+              <option value="V">V&#x1D57;&#x02B0; Semester</option>
+              <option value="VI">VI&#x1D57;&#x02B0; Semester</option>
+              <option value="VII">VII&#x1D57;&#x02B0; Semester</option>
+              <option value="VIII">VIII&#x1D57;&#x02B0; Semester</option>
             </select>
           </div>
 
@@ -482,7 +458,7 @@ const Details = () => {
                   </div>
                   <div className={[styles.info, styles.Name].join(" ")}>
                     <div>
-                      {parameter.FName} {parameter.LName}
+                      {parameter.FirstName} {parameter.LastName}
                     </div>
                   </div>
                   <div className={[styles.info, styles.RollNo].join(" ")}>
@@ -494,10 +470,10 @@ const Details = () => {
                   <div className={styles.badges}>
                     <div className={styles.branchBlock}>{parameter.Branch}</div>
                     <div className={styles.cgpaBlock}>
-                      {parameter.CGPA === "" ? "N/A" : parameter.CGPA}
+                      {parameter.CGPA === "" ? "--" : parameter.CGPA}
                     </div>
                     <div className={styles.csemBlock}>
-                      {parameter.CSEM === "" ? "N/A" : parameter.CSEM}
+                      {parameter.CSEM === "" ? "--" : parameter.CSEM}
                     </div>
                   </div>
                 </div>
@@ -514,7 +490,7 @@ const Details = () => {
                     <div className={styles.buttonContent}></div>
                   </button>
                 ) : (
-                  <div></div>
+                  <></>
                 )}
               </div>
             </div>
@@ -527,6 +503,3 @@ const Details = () => {
 };
 
 export default Details;
-
-{
-}

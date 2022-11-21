@@ -4,9 +4,12 @@ import { AiOutlineUser } from "react-icons/ai";
 import Carousel from "./carousel";
 
 const Info = (props) => {
-  const info = props.data;
+  // const info = props.data;
+  // console.log(info)
+  const temp = props.temp;
+  // console.log(temp)
 
-  if (info === undefined) {
+  if (temp === undefined) {
     return (
       <div className={styles.loading}>
         <span className={styles.loadingAnimation}></span>{" "}
@@ -22,18 +25,20 @@ const Info = (props) => {
           <div className={styles.wrap}>
             <div className={[styles.infor, styles.name].join(" ")}>
               <div className={styles.res}>
-                {info.FName} {info.LName}
+                {/* {info.FName} {info.LName} */}
+                {temp.FirstName} {temp.LastName}
               </div>
             </div>
             <div className={styles.infor}>
               <div className={[styles.res, styles.rollcall].join(" ")}>
-                {info.RollNo}
+                {/* {info.RollNo} */}
+                {temp.RollNo}
               </div>
             </div>
           </div>
         </div>
         <div className={styles.subSection}>
-          <Carousel />
+          <Carousel data={temp} />
         </div>
       </div>
     );

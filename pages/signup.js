@@ -42,16 +42,16 @@ const Signup = () => {
       setRePass("");
     } else {
       const tempData = {
-        FName,
-        LName,
-        Gender,
-        DOB,
-        AdmissionData,
-        Mail,
-        Phone,
-        Branch,
-        RollNo,
-        Pass,
+        FirstName: FName,
+        LastName: LName,
+        Gender: Gender,
+        DOB: DOB,
+        YearOfAddmission: AdmissionData,
+        Mail: Mail,
+        Mobile: Phone,
+        Branch: Branch,
+        RollNo: RollNo,
+        Password: Pass,
       };
       setSignData(tempData);
       sendData(tempData);
@@ -68,24 +68,40 @@ const Signup = () => {
   };
 
   const sendData = async (e) => {
-    // ?Try Catch Not Enabled Here
+    console.log(e);
 
-    let sentData = await fetch("http://localhost:3000/api/userSave", {
+    let sendToDB = await fetch("http://127.0.0.1:1000/createstudent", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(e),
     });
-
-    let resData = await sentData.json();
-    if (resData.status === "Exists") {
+    let res = await sendToDB.json();
+    if (res.status === "Exists") {
       alert("User Already Exists");
     } else {
       alert("Submitted SuccessFully");
     }
+
+    // ?Try Catch Not Enabled Here
+
+    // let sentData = await fetch("http://localhost:3000/api/userSave", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(e),
+    // });
+    // * Legacy Code for Filesystem Management
+
+    // let resData = await sentData.json();
+    // if (resData.status === "Exists") {
+    //   alert("User Already Exists");
+    // } else {
+    //   alert("Submitted SuccessFully");
+    // }
     clearState();
-    console.log(resData);
   };
 
   //! Expremental Features Below Here

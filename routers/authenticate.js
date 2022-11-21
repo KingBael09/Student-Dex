@@ -9,21 +9,21 @@ app.use(express.json());
 router.post("/getAuthenticateStudent", async (req, res) => {
   try {
     const data = await Student.findOne({ RollNo: req.body.RollNo });
-    console.log({data});
+    // console.log({ data });
     if (!data) {
       res.write("false");
       res.status(500).json({
-        message:"No user"
+        message: "Unavailable",
       });
     } else if (data.Password == req.body.Password) {
       res.json(data);
     } else {
       res.status(500).json({
-        message:"Invalid Password"
+        message: "Invalid",
       });
     }
   } catch (e) {
-    console.log(e);
+    console.error({ msg: "Error @DB_Server_Authenticate", error: e });
   }
 });
 
