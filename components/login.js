@@ -2,15 +2,11 @@ import React, { useState } from "react";
 import styles from "../styles/Login.module.css";
 import Link from "next/link";
 import Head from "next/head";
-
 import { useUserInfo } from "../context/userState";
-import { useRouter } from "next/router";
 
-const Login = (props) => {
-  const router = useRouter();
+const Login = () => {
   const [id, setid] = useState("");
   const [pass, setpass] = useState("");
-  const [dataInput, setDataInput] = useState();
   const [some, setsome] = useUserInfo();
 
   const handleChange = (e) => {
@@ -34,17 +30,6 @@ const Login = (props) => {
   };
 
   const callSessionValidator = async (e) => {
-    // let sentData = await fetch("http://localhost:3000/api/userSession", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(e),
-    // });
-
-    // let resData = await sentData.json();
-    // console.log(resData);
-
     let stuData = await fetch("http://127.0.0.1:1000/getAuthenticateStudent", {
       method: "POST",
       headers: {
@@ -53,10 +38,10 @@ const Login = (props) => {
       body: JSON.stringify(e),
     });
     let secData = await stuData.json();
-
-    if (secData.status == "Invalid") {
+    // TODO: BUG: if user not available gives fetch error
+    if (secData.message == "Invalid") {
       alert("Invalid Password");
-    } else if (secData.status == "Unavailable") {
+    } else if (secData.message == "No User") {
       alert("User Not Found");
     } else {
       setsome(e);
@@ -130,3 +115,5 @@ const Login = (props) => {
 };
 
 export default Login;
+
+// TODO: Streamline Login Flow

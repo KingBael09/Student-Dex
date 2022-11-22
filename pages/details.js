@@ -16,10 +16,7 @@ const Details = () => {
   const [warning, setWarning] = useState("false");
   const parameter = Logged;
 
-  const [Category, setCategory] = useState(
-    parameter.Category === "N/A" ? "" : parameter.Category
-  );
-  //! Needs Update
+  const [Category, setCategory] = useState(parameter.Category);
   const [City, setCity] = useState(parameter.City);
   const [Nationality, setNationality] = useState(parameter.Nationality);
   const [PhysicallyHandicap, setPhysicallyHandicap] = useState(
@@ -32,28 +29,44 @@ const Details = () => {
   const [Attendence, setAttendence] = useState(parameter.Attendence);
 
   const postData = async (e) => {
-    console.log(e);
-    // TODO: Work Needed Here
-  };
-  // console.log(Logged);
-
-  const postReq = () => {
-    console.log("Request For Post has been Made");
-    const sentData = {
-      RollNo: Logged.RollNo,
-      Category: Category,
-      City: City,
-      Nationality: Nationality,
-      PhysicallyHandicap: PhysicallyHandicap,
-      Religion: Religion,
+    const data = {
       Address: Address,
       Attendence: Attendence,
+      Branch: Logged.Branch,
       CGPA: CGPA,
       CSEM: CSEM,
+      Category: Category,
+      City: City,
+      DOB: Logged.DOB,
+      FirstName: Logged.FirstName,
+      Gender: Logged.Gender,
+      LastName: Logged.LastName,
+      Mail: Logged.Mail,
+      Mobile: Logged.Mobile,
+      Nationality: Nationality,
+      Password: Logged.Password,
+      PhysicallyHandicap: PhysicallyHandicap,
+      Religion: Religion,
+      RollNo: Logged.RollNo,
+      YearOfAddmission: Logged.YearOfAddmission,
     };
-    // console.log(Logged);
+    const sendReq = await fetch("http://127.0.0.1:1000/updatedata", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const Res = await sendReq.json();
 
-    postData(Logged);
+    console.log(Res.status);
+    if (Res.status == "true") {
+      alert("Your Request Has been Completed");
+    }
+  };
+
+  const postReq = () => {
+    postData();
 
     // Locally Updating Stuff
     parameter.Category = Category;

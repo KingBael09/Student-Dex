@@ -17,7 +17,6 @@
   background-color: white;
   z-index: 94;
   height: 10vh;
-  /* background-color: rebeccapurple; */
 }
 
 .big {
@@ -41,23 +40,16 @@
 .selector {
   display: flex;
   gap: 1rem;
-  /* flex: 1; */
-  /* width: 70%; */
-  /* justify-content: center; */
   align-items: center;
   flex: 1;
-  /* background-color: rebeccapurple; */
   padding: 1rem;
   margin-inline: 4rem;
-  /* flex: 1; */
 }
 
 .lable {
-  /* flex-grow: 1; */
   font-size: 30px;
   font-family: var(--codeFont);
   font-weight: 900;
-  /* margin-left: auto; */
 }
 
 .select {
@@ -80,9 +72,7 @@
 }
 
 .field {
-  /* background-color: rebeccapurple; */
   display: flex;
-  /* height: 100%; */
   margin-top: 2rem;
 }
 
@@ -90,7 +80,6 @@
   display: flex;
   justify-content: ce;
   align-items: center;
-
   font-size: 7rem;
   font-family: var(--codeFont);
   padding: 1rem;
@@ -99,7 +88,6 @@
   background-color: var(--subButton);
   cursor: pointer;
   transition: all 0.2s ease;
-  /* padding: 2rem 3rem; */
   border-radius: 50%;
   overflow: hidden;
 
@@ -117,13 +105,9 @@
 
 .contentSection {
   flex: 1;
-  /* height: 100%; */
-  /* flex: 1; */
-  /* background-color: rebeccapurple; */
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  /* margin: 1rem; */
 }
 
 .buttonContainer {

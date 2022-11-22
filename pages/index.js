@@ -14,36 +14,17 @@ import { useUserData } from "../Context/dataHolder";
 
 export default function Home(props) {
   const [session, setsession] = useUserInfo();
-  const [info, setinfo] = useState();
+  const [logged, setLogged] = useUserData();
 
   const [infoTemp, setinfoTemp] = useState();
 
-  const [logged, setLogged] = useUserData();
-
-  const dataService = async () => {
-    let ImportedData = await fetch("http://localhost:3000/api/userInfo", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(session),
-    });
-    let data = await ImportedData.json();
-    let finaldata = data;
-    setinfo(finaldata);
-    setLogged(finaldata);
-  };
-
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
   const setData = (e) => {
     setinfoTemp(e);
-    // console.log(e);
   };
 
   const secondServ = async () => {
     const RollNo = await session.RollNo;
     const Password = await session.Password;
-    // console.log(RollNo + " " + Password);
 
     if (RollNo != undefined) {
       let stuData = await fetch(
@@ -58,14 +39,12 @@ export default function Home(props) {
       );
       let secData = await stuData.json();
       setData(secData);
-      setLogged(secData)
+      setLogged(secData);
     }
   };
-  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!Danger
 
   //? useEffect is Kinda Fucked Up as of Now!
   useEffect(() => {
-    // dataService();
     secondServ();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [session]);
@@ -77,8 +56,6 @@ export default function Home(props) {
   }
   // !Before This is Fucked Up Logic
   else {
-    // console.log(logged)
-    // console.log(session);
     return (
       <>
         <Head>
@@ -98,10 +75,10 @@ export default function Home(props) {
             </div>
             <div className={styles.wrap}>
               <div className={[styles.major, styles.dash].join(" ")}>
-                <Info data={info} temp={infoTemp} />
+                <Info temp={infoTemp} />
               </div>
               <div className={[styles.extras, styles.dash].join(" ")}>
-                <Extras localData={logged} data={infoTemp} />
+                <Extras data={infoTemp} />
               </div>
             </div>
           </main>

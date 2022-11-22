@@ -43,7 +43,6 @@ export default async function handler(req, res) {
 
       res.status(200).json({ status: "OK" });
 
-      // fs.appendFileSync()
     } else {
       res.status(200).json({ status: "Database Error" });
     }

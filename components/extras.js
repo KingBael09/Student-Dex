@@ -30,7 +30,6 @@ const Extras = (props) => {
             <span>{parameter.Branch}</span>
           </div>
         </div>
-
         {parameter.CSEM === "" ? (
           <Link href={"/details"}>
             <button
@@ -56,7 +55,6 @@ const Extras = (props) => {
             </div>
           </div>
         )}
-
         {parameter.CGPA === "" ? (
           <Link href={"/details"}>
             <button
@@ -82,7 +80,6 @@ const Extras = (props) => {
             </div>
           </div>
         )}
-
         <div className={[styles.cardContainer, styles.special].join(" ")}>
           <div className={styles.cardName}>
             <div>Registered</div>

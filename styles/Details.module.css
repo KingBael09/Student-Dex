@@ -29,7 +29,6 @@
 .heading > :last-child {
   margin-left: auto;
   margin-right: 2rem;
-  /* color: black; */
 }
 
 .badges {
@@ -205,14 +204,12 @@
   content: url("../public/editButton.svg");
   padding: 1rem;
   transition: all 0.2s ease-in-out;
-  /* cursor: pointer; */
 }
 
 .select {
   border: none;
   outline: none;
   cursor: pointer;
-  /* font-family: "Roboto"; */
 }
 
 .input {

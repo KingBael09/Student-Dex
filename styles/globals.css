@@ -10,7 +10,6 @@
   --slightWhite: #ececec;
   --offWhite: hsl(0, 0%, 80%);
   --subZero: hsl(0, 0%, 94%);
-
   --invalidInput: #ffe3e3;
   --validInput: #c2ffeb;
   --validated: #ddfff3;
@@ -19,13 +18,12 @@
   --state: #f75252;
   --addBack: #ffb7b7;
   --unfocusInvalid: #ffd4d4;
-
-  --codeFont: "Jetbrains Mono";
   --deeperState: #36b387;
   --ultraDeep: #ff6872;
   --ultraState: #288866;
   --uniqueState: #190075;
 
+  --codeFont: "Jetbrains Mono";
   --height: 85vh;
 }
 

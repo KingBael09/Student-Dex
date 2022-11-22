@@ -7,6 +7,8 @@ import { useUserData } from "../Context/dataHolder";
 import Router from "next/router";
 import { useState } from "react";
 
+// ! Work in Progress
+
 const CGPA = () => {
   const [session, setsession] = useUserInfo();
   const [Logged, setLogged] = useUserData();
@@ -14,13 +16,13 @@ const CGPA = () => {
   const [selSem, setSelSem] = useState("");
   console.log(Logged);
 
-  const giveSubjects=()=>{
-    return(
-        <div>
-            <div>LMAO</div>
-        </div>
-    )
-  }
+  const giveSubjects = () => {
+    return (
+      <div>
+        <div>LMAO</div>
+      </div>
+    );
+  };
 
   const courseSel = () => {
     const branch = Logged.Branch;
@@ -70,9 +72,7 @@ const CGPA = () => {
               </div>
             </div>
             <div className={styles.field}>
-              <div className={styles.contentSection}>
-                {giveSubjects()}
-              </div>
+              <div className={styles.contentSection}>{giveSubjects()}</div>
               <div className={styles.buttonContainer}>
                 <button className={styles.button}>{"=>"}</button>
               </div>

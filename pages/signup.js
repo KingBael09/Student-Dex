@@ -16,7 +16,6 @@ const Signup = () => {
   const [Pass, setPass] = useState("");
   const [RePass, setRePass] = useState("");
 
-  const [SignData, setSignData] = useState("");
   const [stage, setStage] = useState(1);
 
   const clearState = () => {
@@ -53,7 +52,6 @@ const Signup = () => {
         RollNo: RollNo,
         Password: Pass,
       };
-      setSignData(tempData);
       sendData(tempData);
     }
   };
@@ -86,21 +84,6 @@ const Signup = () => {
 
     // ?Try Catch Not Enabled Here
 
-    // let sentData = await fetch("http://localhost:3000/api/userSave", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(e),
-    // });
-    // * Legacy Code for Filesystem Management
-
-    // let resData = await sentData.json();
-    // if (resData.status === "Exists") {
-    //   alert("User Already Exists");
-    // } else {
-    //   alert("Submitted SuccessFully");
-    // }
     clearState();
   };
 

@@ -4,10 +4,7 @@ import { AiOutlineUser } from "react-icons/ai";
 import Carousel from "./carousel";
 
 const Info = (props) => {
-  // const info = props.data;
-  // console.log(info)
   const temp = props.temp;
-  // console.log(temp)
 
   if (temp === undefined) {
     return (
@@ -25,13 +22,11 @@ const Info = (props) => {
           <div className={styles.wrap}>
             <div className={[styles.infor, styles.name].join(" ")}>
               <div className={styles.res}>
-                {/* {info.FName} {info.LName} */}
                 {temp.FirstName} {temp.LastName}
               </div>
             </div>
             <div className={styles.infor}>
               <div className={[styles.res, styles.rollcall].join(" ")}>
-                {/* {info.RollNo} */}
                 {temp.RollNo}
               </div>
             </div>

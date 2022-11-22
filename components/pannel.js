@@ -13,7 +13,6 @@ import { ImBooks } from "react-icons/im";
 import { useUserInfo } from "../context/userState";
 
 const Pannel = () => {
-  // ?Done TODO: add global state to switch between home page blur on pannel hover
   const [session, setsession] = useUserInfo();
   const handleLogout = () => {
     setsession("waiting");

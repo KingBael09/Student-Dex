@@ -1,10 +1,9 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import styles from "../styles/Clock.module.css";
 
-const clock = () => {
+const Clock = () => {
   const [hour, sethour] = useState("0");
   const [min, setmin] = useState("0");
   const [sec, setsec] = useState("0");
@@ -42,4 +41,4 @@ const clock = () => {
   );
 };
 
-export default clock;
+export default Clock;

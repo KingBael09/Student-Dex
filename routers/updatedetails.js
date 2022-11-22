@@ -15,7 +15,7 @@ router.patch("/updatedata", async (req, res) => {
 router.post("/studentdata", async (req, res) => {
   try {
     const data = await Student.findOne({ RollNo: req.body.RollNo });
-    res.send(data);
+    res.status(200).json({ status: "true" });
     console.log("data fetched successfully");
   } catch (e) {
     console.log(e);
