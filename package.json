@@ -11,7 +11,7 @@
     "server": "node app.js",
     "devServer": "nodemon app.js",
     "s": "concurrently -n \"Next,Node\" -c \"bgRed.bold,bgBlack.bold\" \"yarn dev\" \"yarn devServer\"",
-    "bd": "next build && concurrently \"yarn start\" \"yarn server\" "
+    "bd": "next build && concurrently -n \"Next,Node\" -c \"bgRed.bold,bgBlack.bold\" \"yarn start\" \"yarn server\" "
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.6",

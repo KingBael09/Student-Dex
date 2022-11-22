@@ -71,6 +71,10 @@ const studentSchema = new mongoose.Schema({
     type: String,
     default: "",
   },
+  Category: {
+    type: String,
+    default: "",
+  },
 });
 
 const userdetails = new mongoose.model("userdetails", studentSchema);

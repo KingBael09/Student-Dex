@@ -8,7 +8,7 @@ import { AiOutlineUser, AiFillEdit } from "react-icons/ai";
 import Router from "next/router";
 
 const Details = () => {
-  const attendanceEditabel = true;
+  const AttendenceEditabel = true;
 
   const [session, setsession] = useUserInfo();
   const [Logged, setLogged] = useUserData();
@@ -29,41 +29,31 @@ const Details = () => {
   const [Address, setAddress] = useState(parameter.Address);
   const [CSEM, setCSEM] = useState(parameter.CSEM);
   const [CGPA, setCGPA] = useState(parameter.CGPA);
-  const [Attendance, setAttendance] = useState(parameter.Attendance);
+  const [Attendence, setAttendence] = useState(parameter.Attendence);
 
   const postData = async (e) => {
     console.log(e);
-    let waitData = await fetch("http://localhost:3000/api/updateData", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(e),
-    });
-
-    let resData = await waitData.json();
-    if (resData.status === "OK") {
-      alert("Your Response has beed Recorded");
-    }
+    // TODO: Work Needed Here
   };
-  console.log(Logged);
+  // console.log(Logged);
 
   const postReq = () => {
     console.log("Request For Post has been Made");
     const sentData = {
-      id: Logged.RollNo,
+      RollNo: Logged.RollNo,
       Category: Category,
       City: City,
       Nationality: Nationality,
       PhysicallyHandicap: PhysicallyHandicap,
       Religion: Religion,
       Address: Address,
-      Attendance: Attendance,
+      Attendence: Attendence,
       CGPA: CGPA,
       CSEM: CSEM,
     };
+    // console.log(Logged);
 
-    postData(sentData);
+    postData(Logged);
 
     // Locally Updating Stuff
     parameter.Category = Category;
@@ -72,7 +62,7 @@ const Details = () => {
     parameter.PhysicallyHandicap = PhysicallyHandicap;
     parameter.Religion = Religion;
     parameter.Address = Address;
-    parameter.Attendance = Attendance;
+    parameter.Attendence = Attendence;
     parameter.CGPA = CGPA;
     parameter.CSEM = CSEM;
   };
@@ -217,7 +207,7 @@ const Details = () => {
           </div>
 
           <div className={styles.infoParams}>
-            <div>Attendance</div>
+            <div>Attendence</div>
             <span>:</span>
             <div>
               {parameter.Attendence === "" ? (
@@ -384,13 +374,13 @@ const Details = () => {
           </div>
 
           <div className={styles.infoParams}>
-            <div>Attendance</div>
+            <div>Attendence</div>
             <span>:</span>
-            {attendanceEditabel === true ? (
+            {AttendenceEditabel === true ? (
               <input
-                value={Attendance}
+                value={Attendence}
                 onChange={(e) => {
-                  setAttendance(e.target.value);
+                  setAttendence(e.target.value);
                 }}
                 pattern="[0-9]"
                 required
@@ -399,10 +389,10 @@ const Details = () => {
               />
             ) : (
               <div>
-                {parameter.Attendance === "N/A" ? (
+                {parameter.Attendence === "N/A" ? (
                   <div className={styles.failError}>Not Editable</div>
                 ) : (
-                  parameter.Attendance + "%"
+                  parameter.Attendence + "%"
                 )}
               </div>
             )}

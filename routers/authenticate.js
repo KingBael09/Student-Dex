@@ -24,7 +24,9 @@ router.post("/getAuthenticateStudent", async (req, res) => {
     }
   } catch (e) {
     console.error({ msg: "Error @DB_Server_Authenticate", error: e });
+    res.status(400).json({ message: "No User" });
   }
 });
 
 module.exports = router;
+// TODO: RES status for if the user isn't available
