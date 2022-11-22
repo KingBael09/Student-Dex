@@ -38,11 +38,13 @@ const Login = () => {
       body: JSON.stringify(e),
     });
     let secData = await stuData.json();
-    // TODO: BUG: if user not available gives fetch error
-    if (secData.message == "Invalid") {
+    if (secData.status === "Invalid") {
       alert("Invalid Password");
-    } else if (secData.message == "No User") {
+      setpass("");
+    } else if (secData.status === "Unavailable") {
       alert("User Not Found");
+      setid("");
+      setpass("");
     } else {
       setsome(e);
     }

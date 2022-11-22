@@ -16,7 +16,6 @@ router.post("/studentdata", async (req, res) => {
   try {
     const data = await Student.findOne({ RollNo: req.body.RollNo });
     res.status(200).json({ status: "true" });
-    console.log("data fetched successfully");
   } catch (e) {
     console.log(e);
   }

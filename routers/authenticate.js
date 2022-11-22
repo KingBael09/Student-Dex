@@ -8,25 +8,22 @@ app.use(express.json());
 
 router.post("/getAuthenticateStudent", async (req, res) => {
   try {
-    const data = await Student.findOne({ RollNo: req.body.RollNo });
-    // console.log({ data });
-    if (!data) {
-      res.write("false");
-      res.status(500).json({
-        message: "Unavailable",
+    const data = await Student.findOne({ RollNo: req.body.RollNo }).select({
+      __v: 0,
+      _id: 0,
+    });
+    if (data == null) {
+      res.status(400).json({
+        status: "Unavailable",
       });
     } else if (data.Password == req.body.Password) {
-      res.json(data);
+      res.status(200).json(data);
     } else {
-      res.status(500).json({
-        message: "Invalid",
-      });
+      res.status(500).json({ status: "Invalid" });
     }
   } catch (e) {
-    console.error({ msg: "Error @DB_Server_Authenticate", error: e });
-    res.status(400).json({ message: "No User" });
+    console.log(e);
   }
 });
 
 module.exports = router;
-// TODO: RES status for if the user isn't available
