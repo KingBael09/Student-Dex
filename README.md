@@ -4,7 +4,15 @@ This is a Student Management Software made with the help of [Next.js](https://ne
 
 ## Getting Started
 
-First, Clone the Repo:
+### Prerequisites
+
+>- Make Sure to have Node on your Machine
+>- Install [MongoDB](https://www.mongodb.com/try/download/community) on your Machine
+</br>
+
+```text
+First, Clone the Repo!
+```
 
 Then,
 
@@ -19,18 +27,13 @@ pnpm install
 Finally
 
 ```bash
-npm run begin
+npm run s
 # or
-yarn begin
+yarn s
 #or
-pnpm begin
+pnpm s
 ```
 
 ## View in LocalHost
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-## Prerequisites
-
->- Make Sure to have Node on your Machine
->- Install MongoDB on your Machine
