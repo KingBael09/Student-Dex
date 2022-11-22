@@ -10,9 +10,7 @@ This is a Student Management Software made with the help of [Next.js](https://ne
 >- Install [MongoDB](https://www.mongodb.com/try/download/community) on your Machine
 </br>
 
-```text
-First, Clone the Repo!
-```
+ ### `First, Clone the Repo! or` [`Download it`](https://github.com/KingBael09/Student-Dex/archive/refs/heads/master.zip)
 
 Then,
 
@@ -37,3 +35,4 @@ pnpm s
 ## View in LocalHost
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
