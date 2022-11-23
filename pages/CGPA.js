@@ -42,7 +42,7 @@ const CGPA = () => {
         <Head>
           <title>CGPA Calculator</title>
         </Head>
-        <div className={styles.wrap}>
+        {/* <div className={styles.wrap}>
           <div className={styles.heading}>
             <div className={styles.big}>CGPA Calculator</div>
           </div>
@@ -77,6 +77,11 @@ const CGPA = () => {
                 <button className={styles.button}>{"=>"}</button>
               </div>
             </div>
+          </div>
+        </div> */}
+        <div className={styles.comingSoon}>
+          <div>
+            Coming Soon<span className={styles.exc}>!</span>
           </div>
         </div>
       </div>
