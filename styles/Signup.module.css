@@ -211,4 +211,5 @@
 .loginButton > button {
   background-color: var(--state);
   color: white;
+  cursor: pointer;
 }

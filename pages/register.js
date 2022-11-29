@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../styles/Course.module.css";
+import styles from "../styles/Register.module.css";
 import Head from "next/head";
 import Router from "next/router";
 
