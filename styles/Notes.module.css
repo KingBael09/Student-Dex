@@ -1,0 +1,27 @@
+.container {
+  margin-left: 8rem;
+  /* height: 100vh; */
+}
+
+.input {
+  background-color: var(--slightWhite) !important;
+  border: none;
+  text-decoration: none;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  font-family: var(--codeFont);
+  font-weight: 750;
+  padding: 1.2rem 2rem;
+  border-radius: 50px;
+  font-size: 1.3rem;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.35);
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+}

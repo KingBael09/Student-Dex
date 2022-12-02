@@ -10,7 +10,7 @@ const csem = "VI";
 
 const CourseDetail = () => {
   const [session, setsession] = useUserInfo();
-
+  
   if (session === "waiting") {
     if (typeof window != "undefined") {
       Router.push("/");
@@ -22,9 +22,11 @@ const CourseDetail = () => {
         <Head>
           <title>Registration</title>
         </Head>
-        <div className={styles.comingSoon}>
-          <div>
-            Coming Soon<span className={styles.exc}>!</span>
+        
+        <div className={styles.warp}>
+          <div className={styles.heading}>Course Registration</div>
+          <div className={styles.content}>
+            
           </div>
         </div>
       </div>

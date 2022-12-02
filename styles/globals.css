@@ -54,3 +54,8 @@ body {
   border: 4px solid #d5ffff;
   background-color: #43e0e6;
 }
+
+::selection {
+  color: white;
+  background-color: var(--deeperState);
+}

@@ -67,9 +67,11 @@ const Pannel = () => {
                 <span>CGPA</span>
               </div>
             </Link>
-            <div className={styles.listItem}>
-              <span>Notes</span>
-            </div>
+            <Link href={'/notes'}>
+              <div className={styles.listItem}>
+                <span>Notes</span>
+              </div>
+            </Link>
             <div className={styles.listItem}>
               <span>Syllabus</span>
             </div>
@@ -95,12 +97,14 @@ const Pannel = () => {
           </div>
         </div>
         <div className={styles.navItem}>
-          <div className={styles.heading}>
-            <div>
-              <AiOutlineInfoCircle />
+          <Link href={"/about"}>
+            <div className={styles.heading}>
+              <div>
+                <AiOutlineInfoCircle />
+              </div>
+              <div className={styles.linkName}>About</div>
             </div>
-            <div className={styles.linkName}>About</div>
-          </div>
+          </Link>
         </div>
       </nav>
       <div className={styles.blur}></div>

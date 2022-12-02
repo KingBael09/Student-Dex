@@ -1,0 +1,85 @@
+.container {
+  margin-left: 8rem;
+  font-family: var(--codeFont);
+
+  /* padding-block: 5vh; */
+}
+
+.wrap {
+  /* background-color: rebeccapurple; */
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  width: 91vw;
+  align-items: center;
+  /* height: 90vh; */
+  justify-content: center;
+}
+
+.heading {
+  font-size: 8rem;
+  font-weight: 900;
+  user-select: none;
+}
+
+.intAlt {
+  font-size: 3rem;
+  color: var(--deeperState);
+  font-weight: 900;
+  user-select: none;
+  /* text-decoration: underline; */
+}
+.alt {
+  color: var(--offWhite);
+}
+
+.info {
+  margin-inline: 20%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 3rem;
+}
+.git {
+  position: absolute;
+  font-size: 10rem;
+  bottom: 2rem;
+
+  color: black;
+  text-decoration: none;
+
+  border-radius: 50%;
+  height: 10rem;
+  width: 10rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 3rem;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.git:hover {
+  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.2);
+}
+
+.git:active {
+  box-shadow: none;
+}
+
+.git::before {
+  content: "GitHub";
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: 900;
+  bottom: 70%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s linear;
+}
+
+.git:hover::before {
+  visibility: visible;
+  opacity: 1;
+  bottom: 100%;
+  color: black;
+}
