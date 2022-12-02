@@ -27,26 +27,12 @@ const Notes = () => {
     setCourse(resData);
   };
 
-  // const displaySem = (e) => {
-  //   if (course != "") {
-  //     const objLen = Object.keys(course[`${e}`]).length;
-  //     // console.log(objLen);
-  //     // let arr = new Array;
-  //     // console.log(course["V"]["2"].Name);
-  //     for (let i = 1; i <= objLen; i++) {
-  //       // console.log(course[`${e}`][`${i}`].Name);
-  //       // callTopic(course[`${e}`][`${i}`]);
-  //     }
-  //   }
-  // };
-
   const showData = (e) => {
-    
     if (e != "") {
       const objLen = Object.keys(course[`${e}`]).length;
       console.log(course[`V`]);
 
-      console.log(objLen) 
+      console.log(objLen);
       return (
         <>
           <div>Hi </div>
@@ -106,75 +92,3 @@ const Notes = () => {
 };
 
 export default Notes;
-
-// let data = {
-//   I: {},
-//   II: {},
-//   III: {},
-//   IV: {},
-//   V: {
-//     1: {
-//       Code: "CS3001",
-//       Name: "Design & Analysis of Algorithm",
-//       Credits: 4,
-//     },
-//     2: {
-//       Code: "CS3002",
-//       Name: "Operating System",
-//       Credits: 3,
-//     },
-//     3: {
-//       Code: "CS3003",
-//       Name: "Theory of Computation",
-//       Credits: 4,
-//     },
-//     4: {
-//       Code: "CS3004",
-//       Name: "Software Engineering",
-//       Credits: 4,
-//     },
-//     5: {
-//       Code: "CS3005",
-//       Name: "Data Mining & Warehousing",
-//       Credits: 4,
-//     },
-//     6: {
-//       Code: "CS3006",
-//       Name: "LAB (Design & Analysis of Algorithm)",
-//       Credits: 1,
-//     },
-//     7: {
-//       Code: "CS3007",
-//       Name: "LAB (Operating System)",
-//       Credits: 1,
-//     },
-//     8: {
-//       Code: "CS3008",
-//       Name: "LAB (Data Mining & Warehousing)",
-//       Credits: 1,
-//     },
-//     9: {
-//       Code: "CS3009",
-//       Name: "Mini Project",
-//       Credits: 1,
-//     },
-//   },
-//   VI: {},
-//   VII: {},
-//   VIII: {},
-// };
-
-// const objLen = Object.keys(data.V).length;
-
-// let arr = new Array();
-
-// Object.keys(data.V).forEach((elem) => {
-//   // console.log(data.V[elem].Name)
-//   arr[elem - 1] = data.V[elem];
-// });
-
-// // console.log(arr);
-
-// arr.map(e=>{
-//     console.log(e.Name)
-// })

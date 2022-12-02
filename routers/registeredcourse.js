@@ -30,7 +30,7 @@ router.post("/registercourse", async (req, res) => {
       console.log("data saved");
       res.send("true");
     } else {
-      res.send("false");
+      res.status(200).json("false");
     }
   } catch (e) {
     console.log(e);
