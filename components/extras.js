@@ -83,7 +83,6 @@ const Extras = (props) => {
         <div className={[styles.cardContainer, styles.special].join(" ")}>
           <div className={styles.cardName}>
             <div>Registered</div>
-            <div>Students</div>
           </div>
           <span className={styles.colon}>:</span>
           <div className={styles.cardValue}>
