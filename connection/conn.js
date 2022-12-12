@@ -9,6 +9,19 @@
 //     console.log("failed");
 //     console.log(e);
 //   });
+// const mongoose = require("mongoose");
+// mongoose
+//   .connect(
+//     "mongodb://mini-project:WGBFqHB69fKANkfj8dsZSVGrMJcet1v4CvG0oXg1AOInkZCvosFZHUO6WKJA2KwiTWw7yNKwZ8jqACDbeuywRg==@mini-project.mongo.cosmos.azure.com:10255/?ssl=true&replicaSet=globaldb&retrywrites=false&maxIdleTimeMS=120000&appName=@mini-project@"
+//   )
+//   .then(() => {
+//     console.log("connection successfully");
+//   })
+//   .catch((e) => {
+//     console.log("failed");
+//   });
+
+// !DUMMY
 const mongoose = require("mongoose");
 mongoose
   .connect(
@@ -18,5 +31,12 @@ mongoose
     console.log("connection successfully");
   })
   .catch((e) => {
-    console.log("failed");
+    mongoose
+      .connect("mongodb://localhost:27017/studentdex")
+      .then(() => {
+        console.log("Connection to local Database");
+      })
+      .catch((e) => {
+        console.log("Connection failed to local Database");
+      });
   });

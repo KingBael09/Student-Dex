@@ -59,7 +59,7 @@ const Notes = () => {
         <Head>
           <title>Notes</title>
         </Head>
-        <div className={styles.wrap}>
+        {/* <div className={styles.wrap}>
           <div className={styles.selector}>
             <select
               name="CSEM"
@@ -84,6 +84,12 @@ const Notes = () => {
           </div>
           <div className={styles.content}>
             {course == "" ? "loading" : showData(SSEM)}
+          </div>
+        </div> */}
+
+        <div className={styles.comingSoon}>
+          <div>
+            Coming Soon<span className={styles.exc}>!</span>
           </div>
         </div>
       </div>

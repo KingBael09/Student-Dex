@@ -3,3 +3,21 @@
   width: 91vw;
   user-select: none;
 }
+
+/* Coming Soon Template */
+
+.comingSoon {
+  display: flex;
+  height: 100vh;
+  width: 92vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.comingSoon > div {
+  background-color: var(--uniqueState);
+  padding: 2rem;
+  color: var(--slightWhite);
+  border-radius: 40px;
+  font-size: 5rem;
+}

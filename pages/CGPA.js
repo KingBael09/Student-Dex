@@ -24,11 +24,11 @@ const CGPA = () => {
         <Head>
           <title>CGPA Calculator</title>
         </Head>
-        {/* <div className={styles.comingSoon}>
+        <div className={styles.comingSoon}>
           <div>
             Coming Soon<span className={styles.exc}>!</span>
           </div>
-        </div> */}
+        </div>
       </div>
     );
   }
